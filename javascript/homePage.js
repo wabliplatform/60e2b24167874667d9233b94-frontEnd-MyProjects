@@ -160,7 +160,26 @@ else if(subDataElements[i-(chunk-1) *subDataElements.length].getAttribute('annot
           parentId = key;
         }
       });
-     location.href= '/viewProject/' + transitionId;}};document.getElementById('it26a').onclick = (event) => {
+     location.href= '/viewProject/' + transitionId;}};document.getElementById('i504f6').onclick = (event) => {
+    event.preventDefault();
+    let projectId = window.location.pathname.replace('/homePage/','');
+      if(projectId === '/homePage' || projectId === ''){
+        let parentId = "";
+        const storedData = window.localStorage.getItem('data');
+        const newMap = new Map(JSON.parse(storedData));
+        newMap.forEach((value, key) => {
+          if (
+            document
+              .getElementById(key)
+              .contains(document.getElementById("i504f6")) === true &&
+              document.getElementById(key).contains(document.getElementById(parentId)) === false
+          ) {
+            projectId = value._id;
+            parentId = key;
+          }
+        });
+      }
+    apiProjectApi.deleteproject( projectId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');}});};document.getElementById('it26a').onclick = (event) => {
     event.preventDefault();
     { 
       let transitionId = window.location.href.split('/').at(-1);
