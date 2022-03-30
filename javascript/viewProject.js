@@ -189,7 +189,25 @@ let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';
         optionElement.setAttribute("selected", true);
     }
   );
-});document.addEventListener('aligndDate', function(e) {
+});document.getElementById('i4wnnr').onclick = (event) => {
+    event.preventDefault();
+    { 
+      let transitionId = window.location.href.split('/').at(-1);
+      let parentId = "";
+      const storedData = window.localStorage.getItem("data");
+      const newMap = new Map(JSON.parse(storedData));
+      newMap.forEach((value, key) => {
+        if (
+          document
+            .getElementById(key)
+            .contains(document.getElementById("i4wnnr")) === true &&
+            document.getElementById(key).contains(document.getElementById(parentId)) === false
+        ) {
+          transitionId = value._id;
+          parentId = key;
+        }
+      });
+     location.href= '/updateDeliverable/' + transitionId;}};document.addEventListener('aligndDate', function(e) {
   const advanceSelect = document.getElementById('i23ab4');
   const selectedElement = advanceSelect.getAttribute('selected-element');
   if (!selectedElement) return;
