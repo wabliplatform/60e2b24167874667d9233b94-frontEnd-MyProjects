@@ -179,6 +179,24 @@ let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';
           parentId = key;
         }
       });
+     location.href= '/updateWorkpackage/' + transitionId;}};document.getElementById('ifqfz7').onclick = (event) => {
+    event.preventDefault();
+    { 
+      let transitionId = window.location.href.split('/').at(-1);
+      let parentId = "";
+      const storedData = window.localStorage.getItem("data");
+      const newMap = new Map(JSON.parse(storedData));
+      newMap.forEach((value, key) => {
+        if (
+          document
+            .getElementById(key)
+            .contains(document.getElementById("ifqfz7")) === true &&
+            document.getElementById(key).contains(document.getElementById(parentId)) === false
+        ) {
+          transitionId = value._id;
+          parentId = key;
+        }
+      });
      location.href= '/updateWorkpackage/' + transitionId;}};document.addEventListener('alignpDeliverable', function(e) {
   const advanceSelect = document.getElementById('i7xfy4');
   const selectedElement = advanceSelect.getAttribute('selected-element');
@@ -227,7 +245,25 @@ let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';
         optionElement.setAttribute("selected", true);
     }
   );
-});document.addEventListener('aligndDate', function(e) {
+});document.getElementById('i5xrc2').onclick = (event) => {
+    event.preventDefault();
+    { 
+      let transitionId = window.location.href.split('/').at(-1);
+      let parentId = "";
+      const storedData = window.localStorage.getItem("data");
+      const newMap = new Map(JSON.parse(storedData));
+      newMap.forEach((value, key) => {
+        if (
+          document
+            .getElementById(key)
+            .contains(document.getElementById("i5xrc2")) === true &&
+            document.getElementById(key).contains(document.getElementById(parentId)) === false
+        ) {
+          transitionId = value._id;
+          parentId = key;
+        }
+      });
+     location.href= '/updateDeliverable/' + transitionId;}};document.addEventListener('aligndDate', function(e) {
   const advanceSelect = document.getElementById('iq6svs');
   const selectedElement = advanceSelect.getAttribute('selected-element');
   if (!selectedElement) return;
@@ -247,7 +283,25 @@ let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';
         optionElement.setAttribute("selected", true);
     }
   );
-});document.addEventListener('aligndDate', function(e) {
+});document.getElementById('ilgj6e').onclick = (event) => {
+    event.preventDefault();
+    { 
+      let transitionId = window.location.href.split('/').at(-1);
+      let parentId = "";
+      const storedData = window.localStorage.getItem("data");
+      const newMap = new Map(JSON.parse(storedData));
+      newMap.forEach((value, key) => {
+        if (
+          document
+            .getElementById(key)
+            .contains(document.getElementById("ilgj6e")) === true &&
+            document.getElementById(key).contains(document.getElementById(parentId)) === false
+        ) {
+          transitionId = value._id;
+          parentId = key;
+        }
+      });
+     location.href= '/updateDeliverable/' + transitionId;}};document.addEventListener('aligndDate', function(e) {
   const advanceSelect = document.getElementById('i2633y');
   const selectedElement = advanceSelect.getAttribute('selected-element');
   if (!selectedElement) return;
@@ -267,7 +321,25 @@ let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';
         optionElement.setAttribute("selected", true);
     }
   );
-});document.addEventListener('aligndDate', function(e) {
+});document.getElementById('ii5ngp').onclick = (event) => {
+    event.preventDefault();
+    { 
+      let transitionId = window.location.href.split('/').at(-1);
+      let parentId = "";
+      const storedData = window.localStorage.getItem("data");
+      const newMap = new Map(JSON.parse(storedData));
+      newMap.forEach((value, key) => {
+        if (
+          document
+            .getElementById(key)
+            .contains(document.getElementById("ii5ngp")) === true &&
+            document.getElementById(key).contains(document.getElementById(parentId)) === false
+        ) {
+          transitionId = value._id;
+          parentId = key;
+        }
+      });
+     location.href= '/updateDeliverable/' + transitionId;}};document.addEventListener('aligndDate', function(e) {
   const advanceSelect = document.getElementById('icfzk3');
   const selectedElement = advanceSelect.getAttribute('selected-element');
   if (!selectedElement) return;
@@ -287,7 +359,25 @@ let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';
         optionElement.setAttribute("selected", true);
     }
   );
-});document.addEventListener('aligndDate', function(e) {
+});document.getElementById('i2fxzv').onclick = (event) => {
+    event.preventDefault();
+    { 
+      let transitionId = window.location.href.split('/').at(-1);
+      let parentId = "";
+      const storedData = window.localStorage.getItem("data");
+      const newMap = new Map(JSON.parse(storedData));
+      newMap.forEach((value, key) => {
+        if (
+          document
+            .getElementById(key)
+            .contains(document.getElementById("i2fxzv")) === true &&
+            document.getElementById(key).contains(document.getElementById(parentId)) === false
+        ) {
+          transitionId = value._id;
+          parentId = key;
+        }
+      });
+     location.href= '/updateDeliverable/' + transitionId;}};document.addEventListener('aligndDate', function(e) {
   const advanceSelect = document.getElementById('it5owk');
   const selectedElement = advanceSelect.getAttribute('selected-element');
   if (!selectedElement) return;
@@ -307,7 +397,25 @@ let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';
         optionElement.setAttribute("selected", true);
     }
   );
-});document.addEventListener('aligndDate', function(e) {
+});document.getElementById('ip0ewu').onclick = (event) => {
+    event.preventDefault();
+    { 
+      let transitionId = window.location.href.split('/').at(-1);
+      let parentId = "";
+      const storedData = window.localStorage.getItem("data");
+      const newMap = new Map(JSON.parse(storedData));
+      newMap.forEach((value, key) => {
+        if (
+          document
+            .getElementById(key)
+            .contains(document.getElementById("ip0ewu")) === true &&
+            document.getElementById(key).contains(document.getElementById(parentId)) === false
+        ) {
+          transitionId = value._id;
+          parentId = key;
+        }
+      });
+     location.href= '/updateDeliverable/' + transitionId;}};document.addEventListener('aligndDate', function(e) {
   const advanceSelect = document.getElementById('i8a83k');
   const selectedElement = advanceSelect.getAttribute('selected-element');
   if (!selectedElement) return;
@@ -327,7 +435,25 @@ let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';
         optionElement.setAttribute("selected", true);
     }
   );
-});document.addEventListener('aligndDate', function(e) {
+});document.getElementById('ikepgw').onclick = (event) => {
+    event.preventDefault();
+    { 
+      let transitionId = window.location.href.split('/').at(-1);
+      let parentId = "";
+      const storedData = window.localStorage.getItem("data");
+      const newMap = new Map(JSON.parse(storedData));
+      newMap.forEach((value, key) => {
+        if (
+          document
+            .getElementById(key)
+            .contains(document.getElementById("ikepgw")) === true &&
+            document.getElementById(key).contains(document.getElementById(parentId)) === false
+        ) {
+          transitionId = value._id;
+          parentId = key;
+        }
+      });
+     location.href= '/updateDeliverable/' + transitionId;}};document.addEventListener('aligndDate', function(e) {
   const advanceSelect = document.getElementById('iwp0nq');
   const selectedElement = advanceSelect.getAttribute('selected-element');
   if (!selectedElement) return;
@@ -347,7 +473,25 @@ let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';
         optionElement.setAttribute("selected", true);
     }
   );
-});document.addEventListener('aligndDate', function(e) {
+});document.getElementById('i10vux').onclick = (event) => {
+    event.preventDefault();
+    { 
+      let transitionId = window.location.href.split('/').at(-1);
+      let parentId = "";
+      const storedData = window.localStorage.getItem("data");
+      const newMap = new Map(JSON.parse(storedData));
+      newMap.forEach((value, key) => {
+        if (
+          document
+            .getElementById(key)
+            .contains(document.getElementById("i10vux")) === true &&
+            document.getElementById(key).contains(document.getElementById(parentId)) === false
+        ) {
+          transitionId = value._id;
+          parentId = key;
+        }
+      });
+     location.href= '/updateDeliverable/' + transitionId;}};document.addEventListener('aligndDate', function(e) {
   const advanceSelect = document.getElementById('ik90um');
   const selectedElement = advanceSelect.getAttribute('selected-element');
   if (!selectedElement) return;
@@ -367,7 +511,25 @@ let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';
         optionElement.setAttribute("selected", true);
     }
   );
-});document.addEventListener('aligndDate', function(e) {
+});document.getElementById('ivcwck').onclick = (event) => {
+    event.preventDefault();
+    { 
+      let transitionId = window.location.href.split('/').at(-1);
+      let parentId = "";
+      const storedData = window.localStorage.getItem("data");
+      const newMap = new Map(JSON.parse(storedData));
+      newMap.forEach((value, key) => {
+        if (
+          document
+            .getElementById(key)
+            .contains(document.getElementById("ivcwck")) === true &&
+            document.getElementById(key).contains(document.getElementById(parentId)) === false
+        ) {
+          transitionId = value._id;
+          parentId = key;
+        }
+      });
+     location.href= '/updateDeliverable/' + transitionId;}};document.addEventListener('aligndDate', function(e) {
   const advanceSelect = document.getElementById('irg4ow');
   const selectedElement = advanceSelect.getAttribute('selected-element');
   if (!selectedElement) return;
@@ -387,7 +549,25 @@ let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';
         optionElement.setAttribute("selected", true);
     }
   );
-});document.addEventListener('aligndDate', function(e) {
+});document.getElementById('ii0pe5').onclick = (event) => {
+    event.preventDefault();
+    { 
+      let transitionId = window.location.href.split('/').at(-1);
+      let parentId = "";
+      const storedData = window.localStorage.getItem("data");
+      const newMap = new Map(JSON.parse(storedData));
+      newMap.forEach((value, key) => {
+        if (
+          document
+            .getElementById(key)
+            .contains(document.getElementById("ii0pe5")) === true &&
+            document.getElementById(key).contains(document.getElementById(parentId)) === false
+        ) {
+          transitionId = value._id;
+          parentId = key;
+        }
+      });
+     location.href= '/updateDeliverable/' + transitionId;}};document.addEventListener('aligndDate', function(e) {
   const advanceSelect = document.getElementById('i3jtfw');
   const selectedElement = advanceSelect.getAttribute('selected-element');
   if (!selectedElement) return;
