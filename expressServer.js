@@ -19,11 +19,39 @@ class ExpressServer {
       this.app.use(express.urlencoded({ extended: false }));
       this.app.use(cookieParser());
       this.app.use(express.static(__dirname));
-      this.app.get('/', (req, res) => res.sendFile(path.join(__dirname,'html','Home.html')));
-			this.app.get('/Home', (req, res) => res.sendFile(path.join(__dirname,'html','Home.html')));
-			this.app.get('/Home/:id', (req, res) => res.sendFile(path.join(__dirname,'html','Home.html')));
-			this.app.get('/viewproject', (req, res) => res.sendFile(path.join(__dirname,'html','viewproject.html')));
-			this.app.get('/viewproject/:id', (req, res) => res.sendFile(path.join(__dirname,'html','viewproject.html')));
+      this.app.get('/', (req, res) => res.sendFile(path.join(__dirname,'html','homePage.html')));
+			this.app.get('/homePage', (req, res) => res.sendFile(path.join(__dirname,'html','homePage.html')));
+			this.app.get('/homePage/:id', (req, res) => res.sendFile(path.join(__dirname,'html','homePage.html')));
+			this.app.get('/createProject', (req, res) => res.sendFile(path.join(__dirname,'html','createProject.html')));
+			this.app.get('/createProject/:id', (req, res) => res.sendFile(path.join(__dirname,'html','createProject.html')));
+			this.app.get('/updateProject', (req, res) => res.sendFile(path.join(__dirname,'html','updateProject.html')));
+			this.app.get('/updateProject/:id', (req, res) => res.sendFile(path.join(__dirname,'html','updateProject.html')));
+			this.app.get('/viewProject', (req, res) => res.sendFile(path.join(__dirname,'html','viewProject.html')));
+			this.app.get('/viewProject/:id', (req, res) => res.sendFile(path.join(__dirname,'html','viewProject.html')));
+			this.app.get('/createTask', (req, res) => res.sendFile(path.join(__dirname,'html','createTask.html')));
+			this.app.get('/createTask/:id', (req, res) => res.sendFile(path.join(__dirname,'html','createTask.html')));
+			this.app.get('/updateTask', (req, res) => res.sendFile(path.join(__dirname,'html','updateTask.html')));
+			this.app.get('/updateTask/:id', (req, res) => res.sendFile(path.join(__dirname,'html','updateTask.html')));
+			this.app.get('/viewTask', (req, res) => res.sendFile(path.join(__dirname,'html','viewTask.html')));
+			this.app.get('/viewTask/:id', (req, res) => res.sendFile(path.join(__dirname,'html','viewTask.html')));
+			this.app.get('/viewTasks', (req, res) => res.sendFile(path.join(__dirname,'html','viewTasks.html')));
+			this.app.get('/viewTasks/:id', (req, res) => res.sendFile(path.join(__dirname,'html','viewTasks.html')));
+			this.app.get('/createWorkpackage', (req, res) => res.sendFile(path.join(__dirname,'html','createWorkpackage.html')));
+			this.app.get('/createWorkpackage/:id', (req, res) => res.sendFile(path.join(__dirname,'html','createWorkpackage.html')));
+			this.app.get('/updateWorkpackage', (req, res) => res.sendFile(path.join(__dirname,'html','updateWorkpackage.html')));
+			this.app.get('/updateWorkpackage/:id', (req, res) => res.sendFile(path.join(__dirname,'html','updateWorkpackage.html')));
+			this.app.get('/createEmployee', (req, res) => res.sendFile(path.join(__dirname,'html','createEmployee.html')));
+			this.app.get('/createEmployee/:id', (req, res) => res.sendFile(path.join(__dirname,'html','createEmployee.html')));
+			this.app.get('/viewEmployees', (req, res) => res.sendFile(path.join(__dirname,'html','viewEmployees.html')));
+			this.app.get('/viewEmployees/:id', (req, res) => res.sendFile(path.join(__dirname,'html','viewEmployees.html')));
+			this.app.get('/viewWorkpackages', (req, res) => res.sendFile(path.join(__dirname,'html','viewWorkpackages.html')));
+			this.app.get('/viewWorkpackages/:id', (req, res) => res.sendFile(path.join(__dirname,'html','viewWorkpackages.html')));
+			this.app.get('/createDeliverable', (req, res) => res.sendFile(path.join(__dirname,'html','createDeliverable.html')));
+			this.app.get('/createDeliverable/:id', (req, res) => res.sendFile(path.join(__dirname,'html','createDeliverable.html')));
+			this.app.get('/updateDeliverable', (req, res) => res.sendFile(path.join(__dirname,'html','updateDeliverable.html')));
+			this.app.get('/updateDeliverable/:id', (req, res) => res.sendFile(path.join(__dirname,'html','updateDeliverable.html')));
+			this.app.get('/viewDeliverables', (req, res) => res.sendFile(path.join(__dirname,'html','viewDeliverables.html')));
+			this.app.get('/viewDeliverables/:id', (req, res) => res.sendFile(path.join(__dirname,'html','viewDeliverables.html')));
 			
     }
   

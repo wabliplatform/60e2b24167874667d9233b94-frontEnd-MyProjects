@@ -13,8 +13,17 @@
 
 
 import ApiClient from './ApiClient';
+import Deliverable from './model/Deliverable';
+import Employee from './model/Employee';
 import Project from './model/Project';
+import ProjectPImage from './model/ProjectPImage';
+import Task from './model/Task';
+import Workpackage from './model/Workpackage';
+import DeliverableApi from './api/DeliverableApi';
+import EmployeeApi from './api/EmployeeApi';
 import ProjectApi from './api/ProjectApi';
+import TaskApi from './api/TaskApi';
+import WorkpackageApi from './api/WorkpackageApi';
 
 
 /**
@@ -56,16 +65,70 @@ export {
     ApiClient,
 
     /**
+     * The Deliverable model constructor.
+     * @property {module:model/Deliverable}
+     */
+    Deliverable,
+
+    /**
+     * The Employee model constructor.
+     * @property {module:model/Employee}
+     */
+    Employee,
+
+    /**
      * The Project model constructor.
      * @property {module:model/Project}
      */
     Project,
 
     /**
+     * The ProjectPImage model constructor.
+     * @property {module:model/ProjectPImage}
+     */
+    ProjectPImage,
+
+    /**
+     * The Task model constructor.
+     * @property {module:model/Task}
+     */
+    Task,
+
+    /**
+     * The Workpackage model constructor.
+     * @property {module:model/Workpackage}
+     */
+    Workpackage,
+
+    /**
+    * The DeliverableApi service constructor.
+    * @property {module:api/DeliverableApi}
+    */
+    DeliverableApi,
+
+    /**
+    * The EmployeeApi service constructor.
+    * @property {module:api/EmployeeApi}
+    */
+    EmployeeApi,
+
+    /**
     * The ProjectApi service constructor.
     * @property {module:api/ProjectApi}
     */
-    ProjectApi
+    ProjectApi,
+
+    /**
+    * The TaskApi service constructor.
+    * @property {module:api/TaskApi}
+    */
+    TaskApi,
+
+    /**
+    * The WorkpackageApi service constructor.
+    * @property {module:api/WorkpackageApi}
+    */
+    WorkpackageApi
 };
 
 export default {
@@ -76,14 +139,68 @@ export default {
     ApiClient,
 
     /**
+     * The Deliverable model constructor.
+     * @property {module:model/Deliverable}
+     */
+    Deliverable,
+
+    /**
+     * The Employee model constructor.
+     * @property {module:model/Employee}
+     */
+    Employee,
+
+    /**
      * The Project model constructor.
      * @property {module:model/Project}
      */
     Project,
 
     /**
+     * The ProjectPImage model constructor.
+     * @property {module:model/ProjectPImage}
+     */
+    ProjectPImage,
+
+    /**
+     * The Task model constructor.
+     * @property {module:model/Task}
+     */
+    Task,
+
+    /**
+     * The Workpackage model constructor.
+     * @property {module:model/Workpackage}
+     */
+    Workpackage,
+
+    /**
+    * The DeliverableApi service constructor.
+    * @property {module:api/DeliverableApi}
+    */
+    DeliverableApi,
+
+    /**
+    * The EmployeeApi service constructor.
+    * @property {module:api/EmployeeApi}
+    */
+    EmployeeApi,
+
+    /**
     * The ProjectApi service constructor.
     * @property {module:api/ProjectApi}
     */
-    ProjectApi
+    ProjectApi,
+
+    /**
+    * The TaskApi service constructor.
+    * @property {module:api/TaskApi}
+    */
+    TaskApi,
+
+    /**
+    * The WorkpackageApi service constructor.
+    * @property {module:api/WorkpackageApi}
+    */
+    WorkpackageApi
 };

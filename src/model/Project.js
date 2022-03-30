@@ -12,6 +12,9 @@
  */
 
 import ApiClient from '../ApiClient';
+import Deliverable from './Deliverable';
+import ProjectPImage from './ProjectPImage';
+import Workpackage from './Workpackage';
 
 /**
  * The Project model module.
@@ -22,16 +25,20 @@ class Project {
     /**
      * Constructs a new <code>Project</code>.
      * @alias module:model/Project
-     * @param projectImage {String} 
-     * @param projectTitle {String} 
-     * @param projectStart {String} 
-     * @param projectEnd {String} 
-     * @param projectGA {String} 
-     * @param projectAbstract {String} 
+     * @param pImage {module:model/ProjectPImage} 
+     * @param pTitle {String} 
+     * @param pStart {String} 
+     * @param pWebsite {String} 
+     * @param pEnd {String} 
+     * @param pDuration {String} 
+     * @param pGA {String} 
+     * @param pAbstract {String} 
+     * @param pWorkpackage {Array.<module:model/Workpackage>} 
+     * @param pDeliverable {Array.<module:model/Deliverable>} 
      */
-    constructor(projectImage, projectTitle, projectStart, projectEnd, projectGA, projectAbstract) { 
+    constructor(pImage, pTitle, pStart, pWebsite, pEnd, pDuration, pGA, pAbstract, pWorkpackage, pDeliverable) { 
         
-        Project.initialize(this, projectImage, projectTitle, projectStart, projectEnd, projectGA, projectAbstract);
+        Project.initialize(this, pImage, pTitle, pStart, pWebsite, pEnd, pDuration, pGA, pAbstract, pWorkpackage, pDeliverable);
     }
 
     /**
@@ -39,13 +46,17 @@ class Project {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, projectImage, projectTitle, projectStart, projectEnd, projectGA, projectAbstract) { 
-        obj['ProjectImage'] = projectImage;
-        obj['ProjectTitle'] = projectTitle;
-        obj['ProjectStart'] = projectStart;
-        obj['ProjectEnd'] = projectEnd;
-        obj['ProjectGA'] = projectGA;
-        obj['ProjectAbstract'] = projectAbstract;
+    static initialize(obj, pImage, pTitle, pStart, pWebsite, pEnd, pDuration, pGA, pAbstract, pWorkpackage, pDeliverable) { 
+        obj['pImage'] = pImage;
+        obj['pTitle'] = pTitle;
+        obj['pStart'] = pStart;
+        obj['pWebsite'] = pWebsite;
+        obj['pEnd'] = pEnd;
+        obj['pDuration'] = pDuration;
+        obj['pGA'] = pGA;
+        obj['pAbstract'] = pAbstract;
+        obj['pWorkpackage'] = pWorkpackage;
+        obj['pDeliverable'] = pDeliverable;
     }
 
     /**
@@ -62,23 +73,35 @@ class Project {
             if (data.hasOwnProperty('_id')) {
                 obj['_id'] = ApiClient.convertToType(data['_id'], 'String');
             }
-            if (data.hasOwnProperty('ProjectImage')) {
-                obj['ProjectImage'] = ApiClient.convertToType(data['ProjectImage'], 'String');
+            if (data.hasOwnProperty('pImage')) {
+                obj['pImage'] = ProjectPImage.constructFromObject(data['pImage']);
             }
-            if (data.hasOwnProperty('ProjectTitle')) {
-                obj['ProjectTitle'] = ApiClient.convertToType(data['ProjectTitle'], 'String');
+            if (data.hasOwnProperty('pTitle')) {
+                obj['pTitle'] = ApiClient.convertToType(data['pTitle'], 'String');
             }
-            if (data.hasOwnProperty('ProjectStart')) {
-                obj['ProjectStart'] = ApiClient.convertToType(data['ProjectStart'], 'String');
+            if (data.hasOwnProperty('pStart')) {
+                obj['pStart'] = ApiClient.convertToType(data['pStart'], 'String');
             }
-            if (data.hasOwnProperty('ProjectEnd')) {
-                obj['ProjectEnd'] = ApiClient.convertToType(data['ProjectEnd'], 'String');
+            if (data.hasOwnProperty('pWebsite')) {
+                obj['pWebsite'] = ApiClient.convertToType(data['pWebsite'], 'String');
             }
-            if (data.hasOwnProperty('ProjectGA')) {
-                obj['ProjectGA'] = ApiClient.convertToType(data['ProjectGA'], 'String');
+            if (data.hasOwnProperty('pEnd')) {
+                obj['pEnd'] = ApiClient.convertToType(data['pEnd'], 'String');
             }
-            if (data.hasOwnProperty('ProjectAbstract')) {
-                obj['ProjectAbstract'] = ApiClient.convertToType(data['ProjectAbstract'], 'String');
+            if (data.hasOwnProperty('pDuration')) {
+                obj['pDuration'] = ApiClient.convertToType(data['pDuration'], 'String');
+            }
+            if (data.hasOwnProperty('pGA')) {
+                obj['pGA'] = ApiClient.convertToType(data['pGA'], 'String');
+            }
+            if (data.hasOwnProperty('pAbstract')) {
+                obj['pAbstract'] = ApiClient.convertToType(data['pAbstract'], 'String');
+            }
+            if (data.hasOwnProperty('pWorkpackage')) {
+                obj['pWorkpackage'] = ApiClient.convertToType(data['pWorkpackage'], [Workpackage]);
+            }
+            if (data.hasOwnProperty('pDeliverable')) {
+                obj['pDeliverable'] = ApiClient.convertToType(data['pDeliverable'], [Deliverable]);
             }
         }
         return obj;
@@ -93,34 +116,54 @@ class Project {
 Project.prototype['_id'] = undefined;
 
 /**
- * @member {String} ProjectImage
+ * @member {module:model/ProjectPImage} pImage
  */
-Project.prototype['ProjectImage'] = undefined;
+Project.prototype['pImage'] = undefined;
 
 /**
- * @member {String} ProjectTitle
+ * @member {String} pTitle
  */
-Project.prototype['ProjectTitle'] = undefined;
+Project.prototype['pTitle'] = undefined;
 
 /**
- * @member {String} ProjectStart
+ * @member {String} pStart
  */
-Project.prototype['ProjectStart'] = undefined;
+Project.prototype['pStart'] = undefined;
 
 /**
- * @member {String} ProjectEnd
+ * @member {String} pWebsite
  */
-Project.prototype['ProjectEnd'] = undefined;
+Project.prototype['pWebsite'] = undefined;
 
 /**
- * @member {String} ProjectGA
+ * @member {String} pEnd
  */
-Project.prototype['ProjectGA'] = undefined;
+Project.prototype['pEnd'] = undefined;
 
 /**
- * @member {String} ProjectAbstract
+ * @member {String} pDuration
  */
-Project.prototype['ProjectAbstract'] = undefined;
+Project.prototype['pDuration'] = undefined;
+
+/**
+ * @member {String} pGA
+ */
+Project.prototype['pGA'] = undefined;
+
+/**
+ * @member {String} pAbstract
+ */
+Project.prototype['pAbstract'] = undefined;
+
+/**
+ * @member {Array.<module:model/Workpackage>} pWorkpackage
+ */
+Project.prototype['pWorkpackage'] = undefined;
+
+/**
+ * @member {Array.<module:model/Deliverable>} pDeliverable
+ */
+Project.prototype['pDeliverable'] = undefined;
 
 
 

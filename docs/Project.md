@@ -5,11 +5,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | [optional] 
-**projectImage** | **String** |  | 
-**projectTitle** | **String** |  | 
-**projectStart** | **String** |  | 
-**projectEnd** | **String** |  | 
-**projectGA** | **String** |  | 
-**projectAbstract** | **String** |  | 
+**pImage** | [**ProjectPImage**](ProjectPImage.md) |  | 
+**pTitle** | **String** |  | 
+**pStart** | **String** |  | 
+**pWebsite** | **String** |  | 
+**pEnd** | **String** |  | 
+**pDuration** | **String** |  | 
+**pGA** | **String** |  | 
+**pAbstract** | **String** |  | 
+**pWorkpackage** | [**[Workpackage]**](Workpackage.md) |  | 
+**pDeliverable** | [**[Deliverable]**](Deliverable.md) |  | 
 
 
