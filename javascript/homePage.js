@@ -124,7 +124,25 @@ else if(subDataElements[i-(chunk-1) *subDataElements.length].getAttribute('annot
         }
       }
     }
-  document.getElementById('iea1np').onclick = (event) => {
+  document.getElementById('irr1f').onclick = (event) => {
+    event.preventDefault();
+    { 
+      let transitionId = window.location.href.split('/').at(-1);
+      let parentId = "";
+      const storedData = window.localStorage.getItem("data");
+      const newMap = new Map(JSON.parse(storedData));
+      newMap.forEach((value, key) => {
+        if (
+          document
+            .getElementById(key)
+            .contains(document.getElementById("irr1f")) === true &&
+            document.getElementById(key).contains(document.getElementById(parentId)) === false
+        ) {
+          transitionId = value._id;
+          parentId = key;
+        }
+      });
+     location.href= '/viewProject/' + transitionId;}};document.getElementById('iea1np').onclick = (event) => {
     event.preventDefault();
     { 
       let transitionId = window.location.href.split('/').at(-1);
@@ -136,96 +154,6 @@ else if(subDataElements[i-(chunk-1) *subDataElements.length].getAttribute('annot
           document
             .getElementById(key)
             .contains(document.getElementById("iea1np")) === true &&
-            document.getElementById(key).contains(document.getElementById(parentId)) === false
-        ) {
-          transitionId = value._id;
-          parentId = key;
-        }
-      });
-     location.href= '/viewProject/' + transitionId;}};document.getElementById('i6bgfj').onclick = (event) => {
-    event.preventDefault();
-    { 
-      let transitionId = window.location.href.split('/').at(-1);
-      let parentId = "";
-      const storedData = window.localStorage.getItem("data");
-      const newMap = new Map(JSON.parse(storedData));
-      newMap.forEach((value, key) => {
-        if (
-          document
-            .getElementById(key)
-            .contains(document.getElementById("i6bgfj")) === true &&
-            document.getElementById(key).contains(document.getElementById(parentId)) === false
-        ) {
-          transitionId = value._id;
-          parentId = key;
-        }
-      });
-     location.href= '/viewProject/' + transitionId;}};document.getElementById('i6itsi').onclick = (event) => {
-    event.preventDefault();
-    { 
-      let transitionId = window.location.href.split('/').at(-1);
-      let parentId = "";
-      const storedData = window.localStorage.getItem("data");
-      const newMap = new Map(JSON.parse(storedData));
-      newMap.forEach((value, key) => {
-        if (
-          document
-            .getElementById(key)
-            .contains(document.getElementById("i6itsi")) === true &&
-            document.getElementById(key).contains(document.getElementById(parentId)) === false
-        ) {
-          transitionId = value._id;
-          parentId = key;
-        }
-      });
-     location.href= '/viewProject/' + transitionId;}};document.getElementById('i848u').onclick = (event) => {
-    event.preventDefault();
-    { 
-      let transitionId = window.location.href.split('/').at(-1);
-      let parentId = "";
-      const storedData = window.localStorage.getItem("data");
-      const newMap = new Map(JSON.parse(storedData));
-      newMap.forEach((value, key) => {
-        if (
-          document
-            .getElementById(key)
-            .contains(document.getElementById("i848u")) === true &&
-            document.getElementById(key).contains(document.getElementById(parentId)) === false
-        ) {
-          transitionId = value._id;
-          parentId = key;
-        }
-      });
-     location.href= '/viewProject/' + transitionId;}};document.getElementById('iddda').onclick = (event) => {
-    event.preventDefault();
-    { 
-      let transitionId = window.location.href.split('/').at(-1);
-      let parentId = "";
-      const storedData = window.localStorage.getItem("data");
-      const newMap = new Map(JSON.parse(storedData));
-      newMap.forEach((value, key) => {
-        if (
-          document
-            .getElementById(key)
-            .contains(document.getElementById("iddda")) === true &&
-            document.getElementById(key).contains(document.getElementById(parentId)) === false
-        ) {
-          transitionId = value._id;
-          parentId = key;
-        }
-      });
-     location.href= '/viewProject/' + transitionId;}};document.getElementById('iexnk').onclick = (event) => {
-    event.preventDefault();
-    { 
-      let transitionId = window.location.href.split('/').at(-1);
-      let parentId = "";
-      const storedData = window.localStorage.getItem("data");
-      const newMap = new Map(JSON.parse(storedData));
-      newMap.forEach((value, key) => {
-        if (
-          document
-            .getElementById(key)
-            .contains(document.getElementById("iexnk")) === true &&
             document.getElementById(key).contains(document.getElementById(parentId)) === false
         ) {
           transitionId = value._id;
