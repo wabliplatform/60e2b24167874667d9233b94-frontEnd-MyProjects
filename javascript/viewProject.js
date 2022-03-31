@@ -197,6 +197,78 @@ let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';
           parentId = key;
         }
       });
+     location.href= '/updateWorkpackage/' + transitionId;}};document.getElementById('i315zw').onclick = (event) => {
+    event.preventDefault();
+    { 
+      let transitionId = window.location.href.split('/').at(-1);
+      let parentId = "";
+      const storedData = window.localStorage.getItem("data");
+      const newMap = new Map(JSON.parse(storedData));
+      newMap.forEach((value, key) => {
+        if (
+          document
+            .getElementById(key)
+            .contains(document.getElementById("i315zw")) === true &&
+            document.getElementById(key).contains(document.getElementById(parentId)) === false
+        ) {
+          transitionId = value._id;
+          parentId = key;
+        }
+      });
+     location.href= '/updateWorkpackage/' + transitionId;}};document.getElementById('ik2ex1').onclick = (event) => {
+    event.preventDefault();
+    { 
+      let transitionId = window.location.href.split('/').at(-1);
+      let parentId = "";
+      const storedData = window.localStorage.getItem("data");
+      const newMap = new Map(JSON.parse(storedData));
+      newMap.forEach((value, key) => {
+        if (
+          document
+            .getElementById(key)
+            .contains(document.getElementById("ik2ex1")) === true &&
+            document.getElementById(key).contains(document.getElementById(parentId)) === false
+        ) {
+          transitionId = value._id;
+          parentId = key;
+        }
+      });
+     location.href= '/updateWorkpackage/' + transitionId;}};document.getElementById('iw2qdk').onclick = (event) => {
+    event.preventDefault();
+    { 
+      let transitionId = window.location.href.split('/').at(-1);
+      let parentId = "";
+      const storedData = window.localStorage.getItem("data");
+      const newMap = new Map(JSON.parse(storedData));
+      newMap.forEach((value, key) => {
+        if (
+          document
+            .getElementById(key)
+            .contains(document.getElementById("iw2qdk")) === true &&
+            document.getElementById(key).contains(document.getElementById(parentId)) === false
+        ) {
+          transitionId = value._id;
+          parentId = key;
+        }
+      });
+     location.href= '/updateWorkpackage/' + transitionId;}};document.getElementById('innxz8').onclick = (event) => {
+    event.preventDefault();
+    { 
+      let transitionId = window.location.href.split('/').at(-1);
+      let parentId = "";
+      const storedData = window.localStorage.getItem("data");
+      const newMap = new Map(JSON.parse(storedData));
+      newMap.forEach((value, key) => {
+        if (
+          document
+            .getElementById(key)
+            .contains(document.getElementById("innxz8")) === true &&
+            document.getElementById(key).contains(document.getElementById(parentId)) === false
+        ) {
+          transitionId = value._id;
+          parentId = key;
+        }
+      });
      location.href= '/updateWorkpackage/' + transitionId;}};document.addEventListener('alignpDeliverable', function(e) {
   const advanceSelect = document.getElementById('i7xfy4');
   const selectedElement = advanceSelect.getAttribute('selected-element');
@@ -579,6 +651,120 @@ let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';
   );
 });document.addEventListener('aligndStatus', function(e) {
   const advanceSelect = document.getElementById('i66a5l');
+  const selectedElement = advanceSelect.getAttribute('selected-element');
+  if (!selectedElement) return;
+  [...advanceSelect.querySelectorAll("[annotationname]")].forEach(
+    optionElement => {
+      if (optionElement.value === selectedElement)
+        optionElement.setAttribute("selected", true);
+    }
+  );
+});document.getElementById('io25rk').onclick = (event) => {
+    event.preventDefault();
+    { 
+      let transitionId = window.location.href.split('/').at(-1);
+      let parentId = "";
+      const storedData = window.localStorage.getItem("data");
+      const newMap = new Map(JSON.parse(storedData));
+      newMap.forEach((value, key) => {
+        if (
+          document
+            .getElementById(key)
+            .contains(document.getElementById("io25rk")) === true &&
+            document.getElementById(key).contains(document.getElementById(parentId)) === false
+        ) {
+          transitionId = value._id;
+          parentId = key;
+        }
+      });
+     location.href= '/updateDeliverable/' + transitionId;}};document.addEventListener('aligndDate', function(e) {
+  const advanceSelect = document.getElementById('i3vd1a');
+  const selectedElement = advanceSelect.getAttribute('selected-element');
+  if (!selectedElement) return;
+  [...advanceSelect.querySelectorAll("[annotationname]")].forEach(
+    optionElement => {
+      if (optionElement.value === selectedElement)
+        optionElement.setAttribute("selected", true);
+    }
+  );
+});document.addEventListener('aligndStatus', function(e) {
+  const advanceSelect = document.getElementById('iy9h5j');
+  const selectedElement = advanceSelect.getAttribute('selected-element');
+  if (!selectedElement) return;
+  [...advanceSelect.querySelectorAll("[annotationname]")].forEach(
+    optionElement => {
+      if (optionElement.value === selectedElement)
+        optionElement.setAttribute("selected", true);
+    }
+  );
+});document.getElementById('i8f1xz').onclick = (event) => {
+    event.preventDefault();
+    { 
+      let transitionId = window.location.href.split('/').at(-1);
+      let parentId = "";
+      const storedData = window.localStorage.getItem("data");
+      const newMap = new Map(JSON.parse(storedData));
+      newMap.forEach((value, key) => {
+        if (
+          document
+            .getElementById(key)
+            .contains(document.getElementById("i8f1xz")) === true &&
+            document.getElementById(key).contains(document.getElementById(parentId)) === false
+        ) {
+          transitionId = value._id;
+          parentId = key;
+        }
+      });
+     location.href= '/updateDeliverable/' + transitionId;}};document.addEventListener('aligndDate', function(e) {
+  const advanceSelect = document.getElementById('inpu3u');
+  const selectedElement = advanceSelect.getAttribute('selected-element');
+  if (!selectedElement) return;
+  [...advanceSelect.querySelectorAll("[annotationname]")].forEach(
+    optionElement => {
+      if (optionElement.value === selectedElement)
+        optionElement.setAttribute("selected", true);
+    }
+  );
+});document.addEventListener('aligndStatus', function(e) {
+  const advanceSelect = document.getElementById('ig67uy');
+  const selectedElement = advanceSelect.getAttribute('selected-element');
+  if (!selectedElement) return;
+  [...advanceSelect.querySelectorAll("[annotationname]")].forEach(
+    optionElement => {
+      if (optionElement.value === selectedElement)
+        optionElement.setAttribute("selected", true);
+    }
+  );
+});document.getElementById('ia4m58').onclick = (event) => {
+    event.preventDefault();
+    { 
+      let transitionId = window.location.href.split('/').at(-1);
+      let parentId = "";
+      const storedData = window.localStorage.getItem("data");
+      const newMap = new Map(JSON.parse(storedData));
+      newMap.forEach((value, key) => {
+        if (
+          document
+            .getElementById(key)
+            .contains(document.getElementById("ia4m58")) === true &&
+            document.getElementById(key).contains(document.getElementById(parentId)) === false
+        ) {
+          transitionId = value._id;
+          parentId = key;
+        }
+      });
+     location.href= '/updateDeliverable/' + transitionId;}};document.addEventListener('aligndDate', function(e) {
+  const advanceSelect = document.getElementById('isnthj');
+  const selectedElement = advanceSelect.getAttribute('selected-element');
+  if (!selectedElement) return;
+  [...advanceSelect.querySelectorAll("[annotationname]")].forEach(
+    optionElement => {
+      if (optionElement.value === selectedElement)
+        optionElement.setAttribute("selected", true);
+    }
+  );
+});document.addEventListener('aligndStatus', function(e) {
+  const advanceSelect = document.getElementById('iw8t1d');
   const selectedElement = advanceSelect.getAttribute('selected-element');
   if (!selectedElement) return;
   [...advanceSelect.querySelectorAll("[annotationname]")].forEach(
