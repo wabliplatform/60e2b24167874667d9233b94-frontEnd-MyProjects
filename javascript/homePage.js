@@ -124,7 +124,7 @@ else if(subDataElements[i-(chunk-1) *subDataElements.length].getAttribute('annot
         }
       }
     }
-  document.getElementById('iuy3v').onclick = (event) => {
+  document.getElementById('iea1np').onclick = (event) => {
     event.preventDefault();
     { 
       let transitionId = window.location.href.split('/').at(-1);
@@ -135,14 +135,14 @@ else if(subDataElements[i-(chunk-1) *subDataElements.length].getAttribute('annot
         if (
           document
             .getElementById(key)
-            .contains(document.getElementById("iuy3v")) === true &&
+            .contains(document.getElementById("iea1np")) === true &&
             document.getElementById(key).contains(document.getElementById(parentId)) === false
         ) {
           transitionId = value._id;
           parentId = key;
         }
       });
-     location.href= '/viewProject/' + transitionId;}};document.getElementById('i3ljrc').onclick = (event) => {
+     location.href= '/viewProject/' + transitionId;}};document.getElementById('i5cvfz').onclick = (event) => {
     event.preventDefault();
     { 
       let transitionId = window.location.href.split('/').at(-1);
@@ -153,33 +153,14 @@ else if(subDataElements[i-(chunk-1) *subDataElements.length].getAttribute('annot
         if (
           document
             .getElementById(key)
-            .contains(document.getElementById("i3ljrc")) === true &&
+            .contains(document.getElementById("i5cvfz")) === true &&
             document.getElementById(key).contains(document.getElementById(parentId)) === false
         ) {
           transitionId = value._id;
           parentId = key;
         }
       });
-     location.href= '/viewProject/' + transitionId;}};document.getElementById('i504f6').onclick = (event) => {
-    event.preventDefault();
-    let projectId = window.location.pathname.replace('/homePage/','');
-      if(projectId === '/homePage' || projectId === ''){
-        let parentId = "";
-        const storedData = window.localStorage.getItem('data');
-        const newMap = new Map(JSON.parse(storedData));
-        newMap.forEach((value, key) => {
-          if (
-            document
-              .getElementById(key)
-              .contains(document.getElementById("i504f6")) === true &&
-              document.getElementById(key).contains(document.getElementById(parentId)) === false
-          ) {
-            projectId = value._id;
-            parentId = key;
-          }
-        });
-      }
-    apiProjectApi.deleteproject( projectId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');}});};document.getElementById('it26a').onclick = (event) => {
+     location.href= '/viewProject/' + transitionId;}};document.getElementById('i7loom').onclick = (event) => {
     event.preventDefault();
     { 
       let transitionId = window.location.href.split('/').at(-1);
@@ -190,14 +171,14 @@ else if(subDataElements[i-(chunk-1) *subDataElements.length].getAttribute('annot
         if (
           document
             .getElementById(key)
-            .contains(document.getElementById("it26a")) === true &&
+            .contains(document.getElementById("i7loom")) === true &&
             document.getElementById(key).contains(document.getElementById(parentId)) === false
         ) {
           transitionId = value._id;
           parentId = key;
         }
       });
-     location.href= '/viewProject/' + transitionId;}};document.getElementById('ilc3d').onclick = (event) => {
+     location.href= '/viewProject/' + transitionId;}};document.getElementById('i9cud').onclick = (event) => {
     event.preventDefault();
     { 
       let transitionId = window.location.href.split('/').at(-1);
@@ -208,14 +189,14 @@ else if(subDataElements[i-(chunk-1) *subDataElements.length].getAttribute('annot
         if (
           document
             .getElementById(key)
-            .contains(document.getElementById("ilc3d")) === true &&
+            .contains(document.getElementById("i9cud")) === true &&
             document.getElementById(key).contains(document.getElementById(parentId)) === false
         ) {
           transitionId = value._id;
           parentId = key;
         }
       });
-     location.href= '/viewProject/' + transitionId;}};document.getElementById('if314').onclick = (event) => {
+     location.href= '/viewProject/' + transitionId;}};document.getElementById('iiesv').onclick = (event) => {
     event.preventDefault();
     { 
       let transitionId = window.location.href.split('/').at(-1);
@@ -226,14 +207,14 @@ else if(subDataElements[i-(chunk-1) *subDataElements.length].getAttribute('annot
         if (
           document
             .getElementById(key)
-            .contains(document.getElementById("if314")) === true &&
+            .contains(document.getElementById("iiesv")) === true &&
             document.getElementById(key).contains(document.getElementById(parentId)) === false
         ) {
           transitionId = value._id;
           parentId = key;
         }
       });
-     location.href= '/viewProject/' + transitionId;}};document.getElementById('i3ovk').onclick = (event) => {
+     location.href= '/viewProject/' + transitionId;}};document.getElementById('iijf5').onclick = (event) => {
     event.preventDefault();
     { 
       let transitionId = window.location.href.split('/').at(-1);
@@ -244,7 +225,7 @@ else if(subDataElements[i-(chunk-1) *subDataElements.length].getAttribute('annot
         if (
           document
             .getElementById(key)
-            .contains(document.getElementById("i3ovk")) === true &&
+            .contains(document.getElementById("iijf5")) === true &&
             document.getElementById(key).contains(document.getElementById(parentId)) === false
         ) {
           transitionId = value._id;
