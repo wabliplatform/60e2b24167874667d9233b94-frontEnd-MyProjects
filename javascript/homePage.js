@@ -142,7 +142,7 @@ else if(subDataElements[i-(chunk-1) *subDataElements.length].getAttribute('annot
           parentId = key;
         }
       });
-     location.href= '/viewProject/' + transitionId;}};document.getElementById('i5cvfz').onclick = (event) => {
+     location.href= '/viewProject/' + transitionId;}};document.getElementById('i6bgfj').onclick = (event) => {
     event.preventDefault();
     { 
       let transitionId = window.location.href.split('/').at(-1);
@@ -153,14 +153,14 @@ else if(subDataElements[i-(chunk-1) *subDataElements.length].getAttribute('annot
         if (
           document
             .getElementById(key)
-            .contains(document.getElementById("i5cvfz")) === true &&
+            .contains(document.getElementById("i6bgfj")) === true &&
             document.getElementById(key).contains(document.getElementById(parentId)) === false
         ) {
           transitionId = value._id;
           parentId = key;
         }
       });
-     location.href= '/viewProject/' + transitionId;}};document.getElementById('i7loom').onclick = (event) => {
+     location.href= '/viewProject/' + transitionId;}};document.getElementById('i6itsi').onclick = (event) => {
     event.preventDefault();
     { 
       let transitionId = window.location.href.split('/').at(-1);
@@ -171,14 +171,14 @@ else if(subDataElements[i-(chunk-1) *subDataElements.length].getAttribute('annot
         if (
           document
             .getElementById(key)
-            .contains(document.getElementById("i7loom")) === true &&
+            .contains(document.getElementById("i6itsi")) === true &&
             document.getElementById(key).contains(document.getElementById(parentId)) === false
         ) {
           transitionId = value._id;
           parentId = key;
         }
       });
-     location.href= '/viewProject/' + transitionId;}};document.getElementById('i9cud').onclick = (event) => {
+     location.href= '/viewProject/' + transitionId;}};document.getElementById('i848u').onclick = (event) => {
     event.preventDefault();
     { 
       let transitionId = window.location.href.split('/').at(-1);
@@ -189,14 +189,14 @@ else if(subDataElements[i-(chunk-1) *subDataElements.length].getAttribute('annot
         if (
           document
             .getElementById(key)
-            .contains(document.getElementById("i9cud")) === true &&
+            .contains(document.getElementById("i848u")) === true &&
             document.getElementById(key).contains(document.getElementById(parentId)) === false
         ) {
           transitionId = value._id;
           parentId = key;
         }
       });
-     location.href= '/viewProject/' + transitionId;}};document.getElementById('iiesv').onclick = (event) => {
+     location.href= '/viewProject/' + transitionId;}};document.getElementById('iddda').onclick = (event) => {
     event.preventDefault();
     { 
       let transitionId = window.location.href.split('/').at(-1);
@@ -207,14 +207,14 @@ else if(subDataElements[i-(chunk-1) *subDataElements.length].getAttribute('annot
         if (
           document
             .getElementById(key)
-            .contains(document.getElementById("iiesv")) === true &&
+            .contains(document.getElementById("iddda")) === true &&
             document.getElementById(key).contains(document.getElementById(parentId)) === false
         ) {
           transitionId = value._id;
           parentId = key;
         }
       });
-     location.href= '/viewProject/' + transitionId;}};document.getElementById('iijf5').onclick = (event) => {
+     location.href= '/viewProject/' + transitionId;}};document.getElementById('iexnk').onclick = (event) => {
     event.preventDefault();
     { 
       let transitionId = window.location.href.split('/').at(-1);
@@ -225,7 +225,7 @@ else if(subDataElements[i-(chunk-1) *subDataElements.length].getAttribute('annot
         if (
           document
             .getElementById(key)
-            .contains(document.getElementById("iijf5")) === true &&
+            .contains(document.getElementById("iexnk")) === true &&
             document.getElementById(key).contains(document.getElementById(parentId)) === false
         ) {
           transitionId = value._id;
