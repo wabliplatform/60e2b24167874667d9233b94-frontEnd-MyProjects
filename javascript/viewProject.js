@@ -827,7 +827,7 @@ let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';
         optionElement.setAttribute("selected", true);
     }
   );
-});window.onload = () => {let projectId = window.location.pathname.replace('/viewProject/','');apiProjectApi.getproject( projectId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const map = new Map();try { document.querySelector('[annotationname = pTitle]').textContent = response.body.query.pTitle; } catch (e) { console.log(e) };try { document.querySelector('[annotationname = pWebsite]').textContent = response.body.query.pWebsite; } catch (e) { console.log(e) };try { document.querySelector('[annotationname = pGA]').textContent = response.body.query.pGA; } catch (e) { console.log(e) };try { document.querySelector('[annotationname = pStart]').textContent = response.body.query.pStart; } catch (e) { console.log(e) };try { document.querySelector('[annotationname = pEnd]').textContent = response.body.query.pEnd; } catch (e) { console.log(e) };try { document.querySelector('[annotationname = pDuration]').textContent = response.body.query.pDuration; } catch (e) { console.log(e) };try { document.querySelector('[annotationname = pAbstract]').textContent = response.body.query.pAbstract; } catch (e) { console.log(e) };try { 
+});window.onload = () => {let projectId = window.location.pathname.replace('/viewProject/','');apiProjectApi.getproject( projectId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const map = new Map();try { document.querySelector('[annotationname = pTitle]').textContent = response.body.query.pTitle; } catch (e) { console.log(e) };try { 
       if(response.body.query.pImage !== undefined){
         if(document.querySelector('[annotationname = pImage]').getAttribute('type') === 'file'){
           document.querySelector('[annotationname = pImage]').setAttribute('data-image-base64',response.body.query.pImage.data);
@@ -843,7 +843,7 @@ let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';
         }
         document.querySelector('[annotationname = pImage]').name = response.body.query.pImage.name ;
       }
-       } catch (e) { console.log(e) };try { 
+       } catch (e) { console.log(e) };try { document.querySelector('[annotationname = pWebsite]').textContent = response.body.query.pWebsite; } catch (e) { console.log(e) };try { document.querySelector('[annotationname = pGA]').textContent = response.body.query.pGA; } catch (e) { console.log(e) };try { document.querySelector('[annotationname = pStart]').textContent = response.body.query.pStart; } catch (e) { console.log(e) };try { document.querySelector('[annotationname = pEnd]').textContent = response.body.query.pEnd; } catch (e) { console.log(e) };try { document.querySelector('[annotationname = pDuration]').textContent = response.body.query.pDuration; } catch (e) { console.log(e) };try { document.querySelector('[annotationname = pAbstract]').textContent = response.body.query.pAbstract; } catch (e) { console.log(e) };try { 
         document.querySelector('[annotationname = pWorkpackage]').setAttribute('selected-element',response.body.query.pWorkpackage.undefined);
         const insideSubdocument = document.querySelector("[annotationname = 'pWorkpackage']");
         if (insideSubdocument !==null) {
