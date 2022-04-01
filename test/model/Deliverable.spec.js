@@ -78,6 +78,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property dLeader (base name: "dLeader")', function() {
+      // uncomment below and update the code to test the property dLeader
+      //var instance = new TempApi.Deliverable();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

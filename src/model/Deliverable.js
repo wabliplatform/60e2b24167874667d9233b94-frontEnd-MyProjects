@@ -25,10 +25,11 @@ class Deliverable {
      * @param dName {String} 
      * @param dStatus {String} 
      * @param dDate {String} 
+     * @param dLeader {String} 
      */
-    constructor(dName, dStatus, dDate) { 
+    constructor(dName, dStatus, dDate, dLeader) { 
         
-        Deliverable.initialize(this, dName, dStatus, dDate);
+        Deliverable.initialize(this, dName, dStatus, dDate, dLeader);
     }
 
     /**
@@ -36,10 +37,11 @@ class Deliverable {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, dName, dStatus, dDate) { 
+    static initialize(obj, dName, dStatus, dDate, dLeader) { 
         obj['dName'] = dName;
         obj['dStatus'] = dStatus;
         obj['dDate'] = dDate;
+        obj['dLeader'] = dLeader;
     }
 
     /**
@@ -64,6 +66,9 @@ class Deliverable {
             }
             if (data.hasOwnProperty('dDate')) {
                 obj['dDate'] = ApiClient.convertToType(data['dDate'], 'String');
+            }
+            if (data.hasOwnProperty('dLeader')) {
+                obj['dLeader'] = ApiClient.convertToType(data['dLeader'], 'String');
             }
         }
         return obj;
@@ -91,6 +96,11 @@ Deliverable.prototype['dStatus'] = undefined;
  * @member {String} dDate
  */
 Deliverable.prototype['dDate'] = undefined;
+
+/**
+ * @member {String} dLeader
+ */
+Deliverable.prototype['dLeader'] = undefined;
 
 
 
