@@ -311,6 +311,191 @@ let apiWorkpackageApi = new TempApi.WorkpackageApi();import TempApi from '../src
           }
         });
       }
+    apiWorkpackageApi.deleteworkpackage( workpackageId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');{  location.href= '/viewWorkpackages' ;}}});};document.getElementById('iz3jfn').onclick = (event) => {
+    event.preventDefault();
+    { 
+      let transitionId = window.location.href.split('/').at(-1);
+      let parentId = "";
+      const storedData = window.localStorage.getItem("data");
+      const newMap = new Map(JSON.parse(storedData));
+      newMap.forEach((value, key) => {
+        if (
+          document
+            .getElementById(key)
+            .contains(document.getElementById("iz3jfn")) === true &&
+            document.getElementById(key).contains(document.getElementById(parentId)) === false
+        ) {
+          transitionId = value._id;
+          parentId = key;
+        }
+      });
+     location.href= '/updateWorkpackage/' + transitionId;}};document.getElementById('iwiviz').onclick = (event) => {
+    event.preventDefault();
+    let workpackageId = window.location.pathname.replace('/viewWorkpackages/','');
+      if(workpackageId === '/viewWorkpackages' || workpackageId === ''){
+        let parentId = "";
+        const storedData = window.localStorage.getItem('data');
+        const newMap = new Map(JSON.parse(storedData));
+        newMap.forEach((value, key) => {
+          if (
+            document
+              .getElementById(key)
+              .contains(document.getElementById("iwiviz")) === true &&
+              document.getElementById(key).contains(document.getElementById(parentId)) === false
+          ) {
+            workpackageId = value._id;
+            parentId = key;
+          }
+        });
+      }
+    apiWorkpackageApi.deleteworkpackage( workpackageId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');{  location.href= '/viewWorkpackages' ;}}});};document.getElementById('i7wzjh').onclick = (event) => {
+    event.preventDefault();
+    { 
+      let transitionId = window.location.href.split('/').at(-1);
+      let parentId = "";
+      const storedData = window.localStorage.getItem("data");
+      const newMap = new Map(JSON.parse(storedData));
+      newMap.forEach((value, key) => {
+        if (
+          document
+            .getElementById(key)
+            .contains(document.getElementById("i7wzjh")) === true &&
+            document.getElementById(key).contains(document.getElementById(parentId)) === false
+        ) {
+          transitionId = value._id;
+          parentId = key;
+        }
+      });
+     location.href= '/updateWorkpackage/' + transitionId;}};document.getElementById('iz8ilb').onclick = (event) => {
+    event.preventDefault();
+    let workpackageId = window.location.pathname.replace('/viewWorkpackages/','');
+      if(workpackageId === '/viewWorkpackages' || workpackageId === ''){
+        let parentId = "";
+        const storedData = window.localStorage.getItem('data');
+        const newMap = new Map(JSON.parse(storedData));
+        newMap.forEach((value, key) => {
+          if (
+            document
+              .getElementById(key)
+              .contains(document.getElementById("iz8ilb")) === true &&
+              document.getElementById(key).contains(document.getElementById(parentId)) === false
+          ) {
+            workpackageId = value._id;
+            parentId = key;
+          }
+        });
+      }
+    apiWorkpackageApi.deleteworkpackage( workpackageId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');{  location.href= '/viewWorkpackages' ;}}});};document.getElementById('ivbt3u').onclick = (event) => {
+    event.preventDefault();
+    { 
+      let transitionId = window.location.href.split('/').at(-1);
+      let parentId = "";
+      const storedData = window.localStorage.getItem("data");
+      const newMap = new Map(JSON.parse(storedData));
+      newMap.forEach((value, key) => {
+        if (
+          document
+            .getElementById(key)
+            .contains(document.getElementById("ivbt3u")) === true &&
+            document.getElementById(key).contains(document.getElementById(parentId)) === false
+        ) {
+          transitionId = value._id;
+          parentId = key;
+        }
+      });
+     location.href= '/updateWorkpackage/' + transitionId;}};document.getElementById('i49l0p').onclick = (event) => {
+    event.preventDefault();
+    let workpackageId = window.location.pathname.replace('/viewWorkpackages/','');
+      if(workpackageId === '/viewWorkpackages' || workpackageId === ''){
+        let parentId = "";
+        const storedData = window.localStorage.getItem('data');
+        const newMap = new Map(JSON.parse(storedData));
+        newMap.forEach((value, key) => {
+          if (
+            document
+              .getElementById(key)
+              .contains(document.getElementById("i49l0p")) === true &&
+              document.getElementById(key).contains(document.getElementById(parentId)) === false
+          ) {
+            workpackageId = value._id;
+            parentId = key;
+          }
+        });
+      }
+    apiWorkpackageApi.deleteworkpackage( workpackageId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');{  location.href= '/viewWorkpackages' ;}}});};document.getElementById('iu6f08').onclick = (event) => {
+    event.preventDefault();
+    { 
+      let transitionId = window.location.href.split('/').at(-1);
+      let parentId = "";
+      const storedData = window.localStorage.getItem("data");
+      const newMap = new Map(JSON.parse(storedData));
+      newMap.forEach((value, key) => {
+        if (
+          document
+            .getElementById(key)
+            .contains(document.getElementById("iu6f08")) === true &&
+            document.getElementById(key).contains(document.getElementById(parentId)) === false
+        ) {
+          transitionId = value._id;
+          parentId = key;
+        }
+      });
+     location.href= '/updateWorkpackage/' + transitionId;}};document.getElementById('ingrr5').onclick = (event) => {
+    event.preventDefault();
+    let workpackageId = window.location.pathname.replace('/viewWorkpackages/','');
+      if(workpackageId === '/viewWorkpackages' || workpackageId === ''){
+        let parentId = "";
+        const storedData = window.localStorage.getItem('data');
+        const newMap = new Map(JSON.parse(storedData));
+        newMap.forEach((value, key) => {
+          if (
+            document
+              .getElementById(key)
+              .contains(document.getElementById("ingrr5")) === true &&
+              document.getElementById(key).contains(document.getElementById(parentId)) === false
+          ) {
+            workpackageId = value._id;
+            parentId = key;
+          }
+        });
+      }
+    apiWorkpackageApi.deleteworkpackage( workpackageId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');{  location.href= '/viewWorkpackages' ;}}});};document.getElementById('i7tknl').onclick = (event) => {
+    event.preventDefault();
+    { 
+      let transitionId = window.location.href.split('/').at(-1);
+      let parentId = "";
+      const storedData = window.localStorage.getItem("data");
+      const newMap = new Map(JSON.parse(storedData));
+      newMap.forEach((value, key) => {
+        if (
+          document
+            .getElementById(key)
+            .contains(document.getElementById("i7tknl")) === true &&
+            document.getElementById(key).contains(document.getElementById(parentId)) === false
+        ) {
+          transitionId = value._id;
+          parentId = key;
+        }
+      });
+     location.href= '/updateWorkpackage/' + transitionId;}};document.getElementById('ixu6yi').onclick = (event) => {
+    event.preventDefault();
+    let workpackageId = window.location.pathname.replace('/viewWorkpackages/','');
+      if(workpackageId === '/viewWorkpackages' || workpackageId === ''){
+        let parentId = "";
+        const storedData = window.localStorage.getItem('data');
+        const newMap = new Map(JSON.parse(storedData));
+        newMap.forEach((value, key) => {
+          if (
+            document
+              .getElementById(key)
+              .contains(document.getElementById("ixu6yi")) === true &&
+              document.getElementById(key).contains(document.getElementById(parentId)) === false
+          ) {
+            workpackageId = value._id;
+            parentId = key;
+          }
+        });
+      }
     apiWorkpackageApi.deleteworkpackage( workpackageId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');{  location.href= '/viewWorkpackages' ;}}});};window.onload = () => {apiWorkpackageApi.getAllworkpackage((error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const subDataElements =[...document.getElementById("i1r9f").querySelectorAll( "[dataitem='true']" )].filter(
     (element, index, array) =>
     !array.reduce((hasAncestorFlag, dataItem) => hasAncestorFlag || (element.compareDocumentPosition(dataItem) & Node.DOCUMENT_POSITION_CONTAINS) === 8, false)
