@@ -66,12 +66,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property dStatus (base name: "dStatus")', function() {
-      // uncomment below and update the code to test the property dStatus
-      //var instance = new TempApi.Deliverable();
-      //expect(instance).to.be();
-    });
-
     it('should have the property dDate (base name: "dDate")', function() {
       // uncomment below and update the code to test the property dDate
       //var instance = new TempApi.Deliverable();
@@ -80,6 +74,12 @@
 
     it('should have the property dLeader (base name: "dLeader")', function() {
       // uncomment below and update the code to test the property dLeader
+      //var instance = new TempApi.Deliverable();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property dStatus (base name: "dStatus")', function() {
+      // uncomment below and update the code to test the property dStatus
       //var instance = new TempApi.Deliverable();
       //expect(instance).to.be();
     });

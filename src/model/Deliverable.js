@@ -23,13 +23,13 @@ class Deliverable {
      * Constructs a new <code>Deliverable</code>.
      * @alias module:model/Deliverable
      * @param dName {String} 
-     * @param dStatus {String} 
      * @param dDate {String} 
      * @param dLeader {String} 
+     * @param dStatus {String} 
      */
-    constructor(dName, dStatus, dDate, dLeader) { 
+    constructor(dName, dDate, dLeader, dStatus) { 
         
-        Deliverable.initialize(this, dName, dStatus, dDate, dLeader);
+        Deliverable.initialize(this, dName, dDate, dLeader, dStatus);
     }
 
     /**
@@ -37,11 +37,11 @@ class Deliverable {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, dName, dStatus, dDate, dLeader) { 
+    static initialize(obj, dName, dDate, dLeader, dStatus) { 
         obj['dName'] = dName;
-        obj['dStatus'] = dStatus;
         obj['dDate'] = dDate;
         obj['dLeader'] = dLeader;
+        obj['dStatus'] = dStatus;
     }
 
     /**
@@ -61,14 +61,14 @@ class Deliverable {
             if (data.hasOwnProperty('dName')) {
                 obj['dName'] = ApiClient.convertToType(data['dName'], 'String');
             }
-            if (data.hasOwnProperty('dStatus')) {
-                obj['dStatus'] = ApiClient.convertToType(data['dStatus'], 'String');
-            }
             if (data.hasOwnProperty('dDate')) {
                 obj['dDate'] = ApiClient.convertToType(data['dDate'], 'String');
             }
             if (data.hasOwnProperty('dLeader')) {
                 obj['dLeader'] = ApiClient.convertToType(data['dLeader'], 'String');
+            }
+            if (data.hasOwnProperty('dStatus')) {
+                obj['dStatus'] = ApiClient.convertToType(data['dStatus'], 'String');
             }
         }
         return obj;
@@ -88,11 +88,6 @@ Deliverable.prototype['_id'] = undefined;
 Deliverable.prototype['dName'] = undefined;
 
 /**
- * @member {String} dStatus
- */
-Deliverable.prototype['dStatus'] = undefined;
-
-/**
  * @member {String} dDate
  */
 Deliverable.prototype['dDate'] = undefined;
@@ -101,6 +96,11 @@ Deliverable.prototype['dDate'] = undefined;
  * @member {String} dLeader
  */
 Deliverable.prototype['dLeader'] = undefined;
+
+/**
+ * @member {String} dStatus
+ */
+Deliverable.prototype['dStatus'] = undefined;
 
 
 

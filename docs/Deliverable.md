@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | [optional] 
 **dName** | **String** |  | 
-**dStatus** | **String** |  | 
 **dDate** | **String** |  | 
 **dLeader** | **String** |  | 
+**dStatus** | **String** |  | 
 
 
