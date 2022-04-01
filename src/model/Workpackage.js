@@ -25,10 +25,11 @@ class Workpackage {
      * @param wName {String} 
      * @param wPMs {String} 
      * @param wRole {String} 
+     * @param wLeader {String} 
      */
-    constructor(wName, wPMs, wRole) { 
+    constructor(wName, wPMs, wRole, wLeader) { 
         
-        Workpackage.initialize(this, wName, wPMs, wRole);
+        Workpackage.initialize(this, wName, wPMs, wRole, wLeader);
     }
 
     /**
@@ -36,10 +37,11 @@ class Workpackage {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, wName, wPMs, wRole) { 
+    static initialize(obj, wName, wPMs, wRole, wLeader) { 
         obj['wName'] = wName;
         obj['wPMs'] = wPMs;
         obj['wRole'] = wRole;
+        obj['wLeader'] = wLeader;
     }
 
     /**
@@ -64,6 +66,9 @@ class Workpackage {
             }
             if (data.hasOwnProperty('wRole')) {
                 obj['wRole'] = ApiClient.convertToType(data['wRole'], 'String');
+            }
+            if (data.hasOwnProperty('wLeader')) {
+                obj['wLeader'] = ApiClient.convertToType(data['wLeader'], 'String');
             }
         }
         return obj;
@@ -91,6 +96,11 @@ Workpackage.prototype['wPMs'] = undefined;
  * @member {String} wRole
  */
 Workpackage.prototype['wRole'] = undefined;
+
+/**
+ * @member {String} wLeader
+ */
+Workpackage.prototype['wLeader'] = undefined;
 
 
 

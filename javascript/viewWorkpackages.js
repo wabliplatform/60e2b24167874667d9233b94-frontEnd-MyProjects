@@ -64,13 +64,13 @@ let apiWorkpackageApi = new TempApi.WorkpackageApi();import TempApi from '../src
         
       }
      } catch (e) { console.log(e) };try { 
-      const insideSubDataElement = subDataElements[i-(chunk-1) *subDataElements.length].querySelector("[annotationname = 'wRole']");
+      const insideSubDataElement = subDataElements[i-(chunk-1) *subDataElements.length].querySelector("[annotationname = 'wLeader']");
       if(insideSubDataElement !== null){
-        insideSubDataElement.textContent = data[data.length -i -1].wRole;
+        insideSubDataElement.textContent = data[data.length -i -1].wLeader;
         
       }
-      else if(subDataElements[i-(chunk-1) *subDataElements.length].getAttribute('annotationname') === 'wRole'){
-        subDataElements[i-(chunk-1) *subDataElements.length].textContent = data[data.length -i -1].wRole;
+      else if(subDataElements[i-(chunk-1) *subDataElements.length].getAttribute('annotationname') === 'wLeader'){
+        subDataElements[i-(chunk-1) *subDataElements.length].textContent = data[data.length -i -1].wLeader;
         
       }
      } catch (e) { console.log(e) };
@@ -338,13 +338,13 @@ let apiWorkpackageApi = new TempApi.WorkpackageApi();import TempApi from '../src
         
       }
      } catch (e) { console.log(e) };try { 
-      const insideSubDataElement = subDataElements[i-(chunk-1) *subDataElements.length].querySelector("[annotationname = 'wRole']");
+      const insideSubDataElement = subDataElements[i-(chunk-1) *subDataElements.length].querySelector("[annotationname = 'wLeader']");
       if(insideSubDataElement !== null){
-        insideSubDataElement.textContent = data[data.length -i -1].wRole;
+        insideSubDataElement.textContent = data[data.length -i -1].wLeader;
         
       }
-      else if(subDataElements[i-(chunk-1) *subDataElements.length].getAttribute('annotationname') === 'wRole'){
-        subDataElements[i-(chunk-1) *subDataElements.length].textContent = data[data.length -i -1].wRole;
+      else if(subDataElements[i-(chunk-1) *subDataElements.length].getAttribute('annotationname') === 'wLeader'){
+        subDataElements[i-(chunk-1) *subDataElements.length].textContent = data[data.length -i -1].wLeader;
         
       }
      } catch (e) { console.log(e) };
