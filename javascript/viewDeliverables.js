@@ -313,6 +313,191 @@ let apiDeliverableApi = new TempApi.DeliverableApi();import TempApi from '../src
           }
         });
       }
+    apiDeliverableApi.deletedeliverable( deliverableId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');{  location.href= '/viewDeliverables' ;}}});};document.getElementById('i7a0jh').onclick = (event) => {
+    event.preventDefault();
+    { 
+      let transitionId = window.location.href.split('/').at(-1);
+      let parentId = "";
+      const storedData = window.localStorage.getItem("data");
+      const newMap = new Map(JSON.parse(storedData));
+      newMap.forEach((value, key) => {
+        if (
+          document
+            .getElementById(key)
+            .contains(document.getElementById("i7a0jh")) === true &&
+            document.getElementById(key).contains(document.getElementById(parentId)) === false
+        ) {
+          transitionId = value._id;
+          parentId = key;
+        }
+      });
+     location.href= '/updateDeliverable/' + transitionId;}};document.getElementById('ilvvdp').onclick = (event) => {
+    event.preventDefault();
+    let deliverableId = window.location.pathname.replace('/viewDeliverables/','');
+      if(deliverableId === '/viewDeliverables' || deliverableId === ''){
+        let parentId = "";
+        const storedData = window.localStorage.getItem('data');
+        const newMap = new Map(JSON.parse(storedData));
+        newMap.forEach((value, key) => {
+          if (
+            document
+              .getElementById(key)
+              .contains(document.getElementById("ilvvdp")) === true &&
+              document.getElementById(key).contains(document.getElementById(parentId)) === false
+          ) {
+            deliverableId = value._id;
+            parentId = key;
+          }
+        });
+      }
+    apiDeliverableApi.deletedeliverable( deliverableId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');{  location.href= '/viewDeliverables' ;}}});};document.getElementById('i82bmm').onclick = (event) => {
+    event.preventDefault();
+    { 
+      let transitionId = window.location.href.split('/').at(-1);
+      let parentId = "";
+      const storedData = window.localStorage.getItem("data");
+      const newMap = new Map(JSON.parse(storedData));
+      newMap.forEach((value, key) => {
+        if (
+          document
+            .getElementById(key)
+            .contains(document.getElementById("i82bmm")) === true &&
+            document.getElementById(key).contains(document.getElementById(parentId)) === false
+        ) {
+          transitionId = value._id;
+          parentId = key;
+        }
+      });
+     location.href= '/updateDeliverable/' + transitionId;}};document.getElementById('i1fey6').onclick = (event) => {
+    event.preventDefault();
+    let deliverableId = window.location.pathname.replace('/viewDeliverables/','');
+      if(deliverableId === '/viewDeliverables' || deliverableId === ''){
+        let parentId = "";
+        const storedData = window.localStorage.getItem('data');
+        const newMap = new Map(JSON.parse(storedData));
+        newMap.forEach((value, key) => {
+          if (
+            document
+              .getElementById(key)
+              .contains(document.getElementById("i1fey6")) === true &&
+              document.getElementById(key).contains(document.getElementById(parentId)) === false
+          ) {
+            deliverableId = value._id;
+            parentId = key;
+          }
+        });
+      }
+    apiDeliverableApi.deletedeliverable( deliverableId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');{  location.href= '/viewDeliverables' ;}}});};document.getElementById('i6wm0d').onclick = (event) => {
+    event.preventDefault();
+    { 
+      let transitionId = window.location.href.split('/').at(-1);
+      let parentId = "";
+      const storedData = window.localStorage.getItem("data");
+      const newMap = new Map(JSON.parse(storedData));
+      newMap.forEach((value, key) => {
+        if (
+          document
+            .getElementById(key)
+            .contains(document.getElementById("i6wm0d")) === true &&
+            document.getElementById(key).contains(document.getElementById(parentId)) === false
+        ) {
+          transitionId = value._id;
+          parentId = key;
+        }
+      });
+     location.href= '/updateDeliverable/' + transitionId;}};document.getElementById('i0uwmk').onclick = (event) => {
+    event.preventDefault();
+    let deliverableId = window.location.pathname.replace('/viewDeliverables/','');
+      if(deliverableId === '/viewDeliverables' || deliverableId === ''){
+        let parentId = "";
+        const storedData = window.localStorage.getItem('data');
+        const newMap = new Map(JSON.parse(storedData));
+        newMap.forEach((value, key) => {
+          if (
+            document
+              .getElementById(key)
+              .contains(document.getElementById("i0uwmk")) === true &&
+              document.getElementById(key).contains(document.getElementById(parentId)) === false
+          ) {
+            deliverableId = value._id;
+            parentId = key;
+          }
+        });
+      }
+    apiDeliverableApi.deletedeliverable( deliverableId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');{  location.href= '/viewDeliverables' ;}}});};document.getElementById('ifzcb5').onclick = (event) => {
+    event.preventDefault();
+    { 
+      let transitionId = window.location.href.split('/').at(-1);
+      let parentId = "";
+      const storedData = window.localStorage.getItem("data");
+      const newMap = new Map(JSON.parse(storedData));
+      newMap.forEach((value, key) => {
+        if (
+          document
+            .getElementById(key)
+            .contains(document.getElementById("ifzcb5")) === true &&
+            document.getElementById(key).contains(document.getElementById(parentId)) === false
+        ) {
+          transitionId = value._id;
+          parentId = key;
+        }
+      });
+     location.href= '/updateDeliverable/' + transitionId;}};document.getElementById('ibnmzk').onclick = (event) => {
+    event.preventDefault();
+    let deliverableId = window.location.pathname.replace('/viewDeliverables/','');
+      if(deliverableId === '/viewDeliverables' || deliverableId === ''){
+        let parentId = "";
+        const storedData = window.localStorage.getItem('data');
+        const newMap = new Map(JSON.parse(storedData));
+        newMap.forEach((value, key) => {
+          if (
+            document
+              .getElementById(key)
+              .contains(document.getElementById("ibnmzk")) === true &&
+              document.getElementById(key).contains(document.getElementById(parentId)) === false
+          ) {
+            deliverableId = value._id;
+            parentId = key;
+          }
+        });
+      }
+    apiDeliverableApi.deletedeliverable( deliverableId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');{  location.href= '/viewDeliverables' ;}}});};document.getElementById('ih6nrz').onclick = (event) => {
+    event.preventDefault();
+    { 
+      let transitionId = window.location.href.split('/').at(-1);
+      let parentId = "";
+      const storedData = window.localStorage.getItem("data");
+      const newMap = new Map(JSON.parse(storedData));
+      newMap.forEach((value, key) => {
+        if (
+          document
+            .getElementById(key)
+            .contains(document.getElementById("ih6nrz")) === true &&
+            document.getElementById(key).contains(document.getElementById(parentId)) === false
+        ) {
+          transitionId = value._id;
+          parentId = key;
+        }
+      });
+     location.href= '/updateDeliverable/' + transitionId;}};document.getElementById('ipvb64').onclick = (event) => {
+    event.preventDefault();
+    let deliverableId = window.location.pathname.replace('/viewDeliverables/','');
+      if(deliverableId === '/viewDeliverables' || deliverableId === ''){
+        let parentId = "";
+        const storedData = window.localStorage.getItem('data');
+        const newMap = new Map(JSON.parse(storedData));
+        newMap.forEach((value, key) => {
+          if (
+            document
+              .getElementById(key)
+              .contains(document.getElementById("ipvb64")) === true &&
+              document.getElementById(key).contains(document.getElementById(parentId)) === false
+          ) {
+            deliverableId = value._id;
+            parentId = key;
+          }
+        });
+      }
     apiDeliverableApi.deletedeliverable( deliverableId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');{  location.href= '/viewDeliverables' ;}}});};window.onload = () => {apiDeliverableApi.getAlldeliverable((error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const subDataElements =[...document.getElementById("i1r9f").querySelectorAll( "[dataitem='true']" )].filter(
     (element, index, array) =>
     !array.reduce((hasAncestorFlag, dataItem) => hasAncestorFlag || (element.compareDocumentPosition(dataItem) & Node.DOCUMENT_POSITION_CONTAINS) === 8, false)
