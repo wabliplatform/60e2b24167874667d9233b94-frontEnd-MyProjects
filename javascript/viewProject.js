@@ -361,16 +361,6 @@ let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';
         optionElement.setAttribute("selected", true);
     }
   );
-});document.addEventListener('aligndStatus', function(e) {
-  const advanceSelect = document.getElementById('iww56h');
-  const selectedElement = advanceSelect.getAttribute('selected-element');
-  if (!selectedElement) return;
-  [...advanceSelect.querySelectorAll("[annotationname]")].forEach(
-    optionElement => {
-      if (optionElement.value === selectedElement)
-        optionElement.setAttribute("selected", true);
-    }
-  );
 });document.getElementById('i5xrc2').onclick = (event) => {
     event.preventDefault();
     { 
@@ -391,16 +381,6 @@ let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';
       });
      location.href= '/updateDeliverable/' + transitionId;}};document.addEventListener('aligndDate', function(e) {
   const advanceSelect = document.getElementById('iq6svs');
-  const selectedElement = advanceSelect.getAttribute('selected-element');
-  if (!selectedElement) return;
-  [...advanceSelect.querySelectorAll("[annotationname]")].forEach(
-    optionElement => {
-      if (optionElement.value === selectedElement)
-        optionElement.setAttribute("selected", true);
-    }
-  );
-});document.addEventListener('aligndStatus', function(e) {
-  const advanceSelect = document.getElementById('i39d64');
   const selectedElement = advanceSelect.getAttribute('selected-element');
   if (!selectedElement) return;
   [...advanceSelect.querySelectorAll("[annotationname]")].forEach(
@@ -437,7 +417,7 @@ let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';
         optionElement.setAttribute("selected", true);
     }
   );
-});document.addEventListener('aligndStatus', function(e) {
+});document.addEventListener('aligndLeader', function(e) {
   const advanceSelect = document.getElementById('i38pio');
   const selectedElement = advanceSelect.getAttribute('selected-element');
   if (!selectedElement) return;
@@ -475,7 +455,7 @@ let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';
         optionElement.setAttribute("selected", true);
     }
   );
-});document.addEventListener('aligndStatus', function(e) {
+});document.addEventListener('aligndLeader', function(e) {
   const advanceSelect = document.getElementById('iro0ds');
   const selectedElement = advanceSelect.getAttribute('selected-element');
   if (!selectedElement) return;
@@ -513,7 +493,7 @@ let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';
         optionElement.setAttribute("selected", true);
     }
   );
-});document.addEventListener('aligndStatus', function(e) {
+});document.addEventListener('aligndLeader', function(e) {
   const advanceSelect = document.getElementById('ismyrq');
   const selectedElement = advanceSelect.getAttribute('selected-element');
   if (!selectedElement) return;
@@ -551,7 +531,7 @@ let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';
         optionElement.setAttribute("selected", true);
     }
   );
-});document.addEventListener('aligndStatus', function(e) {
+});document.addEventListener('aligndLeader', function(e) {
   const advanceSelect = document.getElementById('i7lwjt');
   const selectedElement = advanceSelect.getAttribute('selected-element');
   if (!selectedElement) return;
@@ -589,7 +569,7 @@ let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';
         optionElement.setAttribute("selected", true);
     }
   );
-});document.addEventListener('aligndStatus', function(e) {
+});document.addEventListener('aligndLeader', function(e) {
   const advanceSelect = document.getElementById('ikqjpp');
   const selectedElement = advanceSelect.getAttribute('selected-element');
   if (!selectedElement) return;
@@ -627,7 +607,7 @@ let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';
         optionElement.setAttribute("selected", true);
     }
   );
-});document.addEventListener('aligndStatus', function(e) {
+});document.addEventListener('aligndLeader', function(e) {
   const advanceSelect = document.getElementById('il94if');
   const selectedElement = advanceSelect.getAttribute('selected-element');
   if (!selectedElement) return;
@@ -665,7 +645,7 @@ let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';
         optionElement.setAttribute("selected", true);
     }
   );
-});document.addEventListener('aligndStatus', function(e) {
+});document.addEventListener('aligndLeader', function(e) {
   const advanceSelect = document.getElementById('ighy0t');
   const selectedElement = advanceSelect.getAttribute('selected-element');
   if (!selectedElement) return;
@@ -703,7 +683,7 @@ let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';
         optionElement.setAttribute("selected", true);
     }
   );
-});document.addEventListener('aligndStatus', function(e) {
+});document.addEventListener('aligndLeader', function(e) {
   const advanceSelect = document.getElementById('i66a5l');
   const selectedElement = advanceSelect.getAttribute('selected-element');
   if (!selectedElement) return;
@@ -741,7 +721,7 @@ let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';
         optionElement.setAttribute("selected", true);
     }
   );
-});document.addEventListener('aligndStatus', function(e) {
+});document.addEventListener('aligndLeader', function(e) {
   const advanceSelect = document.getElementById('iy9h5j');
   const selectedElement = advanceSelect.getAttribute('selected-element');
   if (!selectedElement) return;
@@ -779,7 +759,7 @@ let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';
         optionElement.setAttribute("selected", true);
     }
   );
-});document.addEventListener('aligndStatus', function(e) {
+});document.addEventListener('aligndLeader', function(e) {
   const advanceSelect = document.getElementById('ig67uy');
   const selectedElement = advanceSelect.getAttribute('selected-element');
   if (!selectedElement) return;
@@ -817,7 +797,7 @@ let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';
         optionElement.setAttribute("selected", true);
     }
   );
-});document.addEventListener('aligndStatus', function(e) {
+});document.addEventListener('aligndLeader', function(e) {
   const advanceSelect = document.getElementById('iw8t1d');
   const selectedElement = advanceSelect.getAttribute('selected-element');
   if (!selectedElement) return;
@@ -934,9 +914,9 @@ let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';
     catch(e) {console.log(e);}; try {
       const attributeSubdocumentElement = tableDataElement[
         index
-      ].querySelector("[annotationname = 'dStatus']");
+      ].querySelector("[annotationname = 'dLeader']");
       if (attributeSubdocumentElement !== null) {
-        attributeSubdocumentElement.textContent = tableData[tableData.length - index -1].dStatus;
+        attributeSubdocumentElement.textContent = tableData[tableData.length - index -1].dLeader;
       }
     }
     catch(e) {console.log(e);};
