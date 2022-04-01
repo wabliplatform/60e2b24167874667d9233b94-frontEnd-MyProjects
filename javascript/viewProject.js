@@ -844,9 +844,9 @@ let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';
     catch(e) {console.log(e);}; try {
       const attributeSubdocumentElement = tableDataElement[
         index
-      ].querySelector("[annotationname = 'wRole']");
+      ].querySelector("[annotationname = 'wLeader']");
       if (attributeSubdocumentElement !== null) {
-        attributeSubdocumentElement.textContent = tableData[tableData.length - index -1].wRole;
+        attributeSubdocumentElement.textContent = tableData[tableData.length - index -1].wLeader;
       }
     }
     catch(e) {console.log(e);}; try {
