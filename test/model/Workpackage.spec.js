@@ -72,14 +72,14 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property wRole (base name: "wRole")', function() {
-      // uncomment below and update the code to test the property wRole
+    it('should have the property wLeader (base name: "wLeader")', function() {
+      // uncomment below and update the code to test the property wLeader
       //var instance = new TempApi.Workpackage();
       //expect(instance).to.be();
     });
 
-    it('should have the property wLeader (base name: "wLeader")', function() {
-      // uncomment below and update the code to test the property wLeader
+    it('should have the property wRole (base name: "wRole")', function() {
+      // uncomment below and update the code to test the property wRole
       //var instance = new TempApi.Workpackage();
       //expect(instance).to.be();
     });
