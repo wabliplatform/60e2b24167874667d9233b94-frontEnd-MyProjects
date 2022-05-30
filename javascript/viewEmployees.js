@@ -369,6 +369,7 @@ else if(subDataElements[i].getAttribute('annotationname') === 'eImage' && data[d
         const insideSubdocument = subDataElements[i].querySelector("[annotationname = 'eProject']");
         if (insideSubdocument !==null) {
           const tableData = data[data.length - i - 1].eProject;
+    
     const tableDataElement = insideSubdocument.querySelectorAll("[dataitem='true']");
     tableData.forEach((data,index) => {
       if(tableDataElement.length < index) {

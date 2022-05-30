@@ -15,11 +15,24 @@ let apiWorkpackageApi = new TempApi.WorkpackageApi();import TempApi from '../src
     {  location.href= '/viewWorkpackages' ;}};document.getElementById('ilhnff').onclick = (event) => {
     event.preventDefault();
     {  location.href= '/viewDeliverables' ;}};
- const uploadImage = async (event) => {
-        const file = event.target.files[0];
-        const base64 = await convertBase64(file);
-        return base64;
-      };const convertBase64 = (file) => {
+ function calculateSize(img, maxWidth, maxHeight) {
+      let width = img.width;
+      let height = img.height;
+    
+      // calculate the width and height, constraining the proportions
+      if (width > height) {
+        if (width > maxWidth) {
+          height = Math.round((height * maxWidth) / width);
+          width = maxWidth;
+        }
+      } else {
+        if (height > maxHeight) {
+          width = Math.round((width * maxHeight) / height);
+          height = maxHeight;
+        }
+      }
+      return [width, height];
+    }const convertBase64 = (file) => {
           return new Promise((resolve, reject) => {
             const fileReader = new FileReader();
             fileReader.readAsDataURL(file);
@@ -34,15 +47,47 @@ let apiWorkpackageApi = new TempApi.WorkpackageApi();import TempApi from '../src
           });
         };
 document.getElementById('formFile').addEventListener("change", async(e) => {
-            let imageBase64 = await uploadImage(e);
-        document.getElementById('formFile').setAttribute('data-image-base64' ,imageBase64);
-        document.getElementById('formFile').setAttribute('name',e.target.files[0].name)
-        });
+            
+      const MAX_WIDTH = 300;
+      const MAX_HEIGHT = 300;
+      const MIME_TYPE = "image/jpeg";
+      const QUALITY = 0.9;
+      const file = e.target.files[0]; // get the file
+      const blobURL = URL.createObjectURL(file);
+      const img = new Image();
+      img.src = blobURL;
+      img.onerror = function () {
+        URL.revokeObjectURL(this.src);
+        console.log("Cannot load image");
+      };
+      img.onload = function () {
+        URL.revokeObjectURL(this.src);
+        const [newWidth, newHeight] = calculateSize(img, MAX_WIDTH, MAX_HEIGHT);
+        const canvas = document.createElement("canvas");
+        canvas.width = newWidth;
+        canvas.height = newHeight;
+        const ctx = canvas.getContext("2d");
+        ctx.drawImage(img, 0, 0, newWidth, newHeight);
+        canvas.toBlob(
+          async (blob) => {
+            const base64 = await convertBase64(blob);
+    
+            document
+              .getElementById('formFile')
+              .setAttribute("data-image-base64", base64);
+            document
+              .getElementById('formFile')
+              .setAttribute("name", e.target.files[0].name);
+          },
+          MIME_TYPE,
+          QUALITY
+        );
+      };});
 $(
       function () { $("#datepicker").datepicker({format: 'dd-mm-yyyy'}); }
     );$(
       function () { $("#datepicker-2").datepicker({format: 'dd-mm-yyyy'}); }
-    );const arrayib5cm3 = [];
+    );let arrayib5cm3 = [];
 document.getElementById("iyjqci").onclick = event => {
   event.preventDefault();
   const select = document.getElementById("im1p3y")
@@ -52,13 +97,32 @@ document.getElementById("iyjqci").onclick = event => {
   });
   select.value = "";
   select.selectedIndex = 0;
-    let e=``;
-   for (let y=0; y<arrayib5cm3.length; y++)
-   {
-     e += `<li arrayvalue='${arrayib5cm3[y].value}'>${arrayib5cm3[y].liValue}</li>`;
-   }
-   document.getElementById("ixe5wc").innerHTML = e;
-};document.addEventListener('alignpWorkpackage', function(e) {
+  refreshULixe5wc();
+};
+
+function refreshULixe5wc() {
+let e=``;
+for (let y=0; y<arrayib5cm3.length; y++)
+ {
+   e += `<li index='${y}' arrayvalue='${arrayib5cm3[y].value}'><p style="display: inline-block">${arrayib5cm3[y].liValue}</p><button class="btn pointer bi bi-trash delete-btn" style="display: inline-block;float: right;background-color: red;color: white;" index='${y}'>&nbsp;Delete</button></li>`;
+ }
+document.getElementById("ixe5wc").innerHTML = e;
+}
+
+document.getElementById("ixe5wc").addEventListener("click", event => {
+  event.preventDefault();
+  arrayib5cm3 = arrayib5cm3.filter(
+    (item, index) => +event.target.getAttribute("index") !== index
+  );
+  refreshULixe5wc();
+});
+function initializearrayib5cm3(data) {
+  arrayib5cm3 = data.map(item => ({
+    value: item._id,
+    liValue: item['wName']
+  }));
+}
+document.addEventListener('alignpWorkpackage', function(e) {
   const advanceSelect = document.getElementById('im1p3y');
   const selectedElement = advanceSelect.getAttribute('selected-element');
   if (!selectedElement) return;
@@ -78,7 +142,7 @@ document.getElementById("iyjqci").onclick = event => {
         optionElement.setAttribute("selected", true);
     }
   );
-});const arrayio47ds = [];
+});let arrayio47ds = [];
 document.getElementById("iehmy6").onclick = event => {
   event.preventDefault();
   const select = document.getElementById("ioi4x2")
@@ -88,13 +152,32 @@ document.getElementById("iehmy6").onclick = event => {
   });
   select.value = "";
   select.selectedIndex = 0;
-    let e=``;
-   for (let y=0; y<arrayio47ds.length; y++)
-   {
-     e += `<li arrayvalue='${arrayio47ds[y].value}'>${arrayio47ds[y].liValue}</li>`;
-   }
-   document.getElementById("izpu4r").innerHTML = e;
-};document.addEventListener('alignpDeliverable', function(e) {
+  refreshULizpu4r();
+};
+
+function refreshULizpu4r() {
+let e=``;
+for (let y=0; y<arrayio47ds.length; y++)
+ {
+   e += `<li index='${y}' arrayvalue='${arrayio47ds[y].value}'><p style="display: inline-block">${arrayio47ds[y].liValue}</p><button class="btn pointer bi bi-trash delete-btn" style="display: inline-block;float: right;background-color: red;color: white;" index='${y}'>&nbsp;Delete</button></li>`;
+ }
+document.getElementById("izpu4r").innerHTML = e;
+}
+
+document.getElementById("izpu4r").addEventListener("click", event => {
+  event.preventDefault();
+  arrayio47ds = arrayio47ds.filter(
+    (item, index) => +event.target.getAttribute("index") !== index
+  );
+  refreshULizpu4r();
+});
+function initializearrayio47ds(data) {
+  arrayio47ds = data.map(item => ({
+    value: item._id,
+    liValue: item['dName']
+  }));
+}
+document.addEventListener('alignpDeliverable', function(e) {
   const advanceSelect = document.getElementById('ioi4x2');
   const selectedElement = advanceSelect.getAttribute('selected-element');
   if (!selectedElement) return;

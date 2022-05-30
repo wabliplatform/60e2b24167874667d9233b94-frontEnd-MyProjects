@@ -9,11 +9,24 @@ let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';
     {  location.href= '/viewWorkpackages' ;}};document.getElementById('i1disx').onclick = (event) => {
     event.preventDefault();
     {  location.href= '/viewDeliverables' ;}};
- const uploadImage = async (event) => {
-        const file = event.target.files[0];
-        const base64 = await convertBase64(file);
-        return base64;
-      };const convertBase64 = (file) => {
+ function calculateSize(img, maxWidth, maxHeight) {
+      let width = img.width;
+      let height = img.height;
+    
+      // calculate the width and height, constraining the proportions
+      if (width > height) {
+        if (width > maxWidth) {
+          height = Math.round((height * maxWidth) / width);
+          width = maxWidth;
+        }
+      } else {
+        if (height > maxHeight) {
+          width = Math.round((width * maxHeight) / height);
+          height = maxHeight;
+        }
+      }
+      return [width, height];
+    }const convertBase64 = (file) => {
           return new Promise((resolve, reject) => {
             const fileReader = new FileReader();
             fileReader.readAsDataURL(file);
@@ -28,15 +41,47 @@ let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';
           });
         };
 document.getElementById('formFile').addEventListener("change", async(e) => {
-            let imageBase64 = await uploadImage(e);
-        document.getElementById('formFile').setAttribute('data-image-base64' ,imageBase64);
-        document.getElementById('formFile').setAttribute('name',e.target.files[0].name)
-        });
+            
+      const MAX_WIDTH = 300;
+      const MAX_HEIGHT = 300;
+      const MIME_TYPE = "image/jpeg";
+      const QUALITY = 0.9;
+      const file = e.target.files[0]; // get the file
+      const blobURL = URL.createObjectURL(file);
+      const img = new Image();
+      img.src = blobURL;
+      img.onerror = function () {
+        URL.revokeObjectURL(this.src);
+        console.log("Cannot load image");
+      };
+      img.onload = function () {
+        URL.revokeObjectURL(this.src);
+        const [newWidth, newHeight] = calculateSize(img, MAX_WIDTH, MAX_HEIGHT);
+        const canvas = document.createElement("canvas");
+        canvas.width = newWidth;
+        canvas.height = newHeight;
+        const ctx = canvas.getContext("2d");
+        ctx.drawImage(img, 0, 0, newWidth, newHeight);
+        canvas.toBlob(
+          async (blob) => {
+            const base64 = await convertBase64(blob);
+    
+            document
+              .getElementById('formFile')
+              .setAttribute("data-image-base64", base64);
+            document
+              .getElementById('formFile')
+              .setAttribute("name", e.target.files[0].name);
+          },
+          MIME_TYPE,
+          QUALITY
+        );
+      };});
 $(
       function () { $("#datepicker").datepicker({format: 'dd-mm-yyyy'}); }
     );$(
       function () { $("#datepicker-2").datepicker({format: 'dd-mm-yyyy'}); }
-    );const arrayib5cm3 = [];
+    );let arrayib5cm3 = [];
 document.getElementById("iyjqci").onclick = event => {
   event.preventDefault();
   const select = document.getElementById("im1p3y")
@@ -46,13 +91,32 @@ document.getElementById("iyjqci").onclick = event => {
   });
   select.value = "";
   select.selectedIndex = 0;
-    let e=``;
-   for (let y=0; y<arrayib5cm3.length; y++)
-   {
-     e += `<li arrayvalue='${arrayib5cm3[y].value}'>${arrayib5cm3[y].liValue}</li>`;
-   }
-   document.getElementById("ixe5wc").innerHTML = e;
-};document.getElementById('i7w1n').onclick = (event) => {
+  refreshULixe5wc();
+};
+
+function refreshULixe5wc() {
+let e=``;
+for (let y=0; y<arrayib5cm3.length; y++)
+ {
+   e += `<li index='${y}' arrayvalue='${arrayib5cm3[y].value}'><p style="display: inline-block">${arrayib5cm3[y].liValue}</p><button class="btn pointer bi bi-trash delete-btn" style="display: inline-block;float: right;background-color: red;color: white;" index='${y}'>&nbsp;Delete</button></li>`;
+ }
+document.getElementById("ixe5wc").innerHTML = e;
+}
+
+document.getElementById("ixe5wc").addEventListener("click", event => {
+  event.preventDefault();
+  arrayib5cm3 = arrayib5cm3.filter(
+    (item, index) => +event.target.getAttribute("index") !== index
+  );
+  refreshULixe5wc();
+});
+function initializearrayib5cm3(data) {
+  arrayib5cm3 = data.map(item => ({
+    value: item._id,
+    liValue: item[' ']
+  }));
+}
+document.getElementById('i7w1n').onclick = (event) => {
     event.preventDefault();
     let projectId = window.location.pathname.replace('/updateProject/','');let project = new TempApi.Project();project['pImage'] = {
         data: document.querySelector("[annotationname = 'pImage']").getAttribute("data-image-base64") !== null ? document.querySelector("[annotationname = 'pImage']").getAttribute("data-image-base64") : document.querySelector("[annotationname = 'pImage']").src,

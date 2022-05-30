@@ -828,6 +828,7 @@ let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';
         const insideSubdocument = document.querySelector("[annotationname = 'pWorkpackage']");
         if (insideSubdocument !==null) {
           const tableData = response.body.query.pWorkpackage;
+    
     const tableDataElement = insideSubdocument.querySelectorAll("[dataitem='true']");
     tableData.forEach((data,index) => {
       if(tableDataElement.length < index) {
@@ -890,6 +891,7 @@ let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';
         const insideSubdocument = document.querySelector("[annotationname = 'pDeliverable']");
         if (insideSubdocument !==null) {
           const tableData = response.body.query.pDeliverable;
+    
     const tableDataElement = insideSubdocument.querySelectorAll("[dataitem='true']");
     tableData.forEach((data,index) => {
       if(tableDataElement.length < index) {
