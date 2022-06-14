@@ -1,4 +1,4 @@
-let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';let apiWorkpackageApi = new TempApi.WorkpackageApi();document.getElementById('icaj').onclick = (event) => {
+let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';document.getElementById('icaj').onclick = (event) => {
     event.preventDefault();
     {  location.href= '/homePage' ;}};document.getElementById('i4jic').onclick = (event) => {
     event.preventDefault();
@@ -81,43 +81,43 @@ $(
       function () { $("#datepicker").datepicker({format: 'dd-mm-yyyy'}); }
     );$(
       function () { $("#datepicker-2").datepicker({format: 'dd-mm-yyyy'}); }
-    );let arrayib5cm3 = [];
-document.getElementById("iyjqci").onclick = event => {
+    );let arrayi10vk1 = [];
+document.getElementById("iehd9k").onclick = event => {
   event.preventDefault();
-  const select = document.getElementById("im1p3y")
-  arrayib5cm3.push({
+  const select = document.getElementById("i3795a")
+  arrayi10vk1.push({
       value: select.value,
       liValue: select.selectedOptions[0].textContent
   });
   select.value = "";
   select.selectedIndex = 0;
-  refreshULixe5wc();
+  refreshULi01q7x();
 };
 
-function refreshULixe5wc() {
+function refreshULi01q7x() {
 let e=``;
-for (let y=0; y<arrayib5cm3.length; y++)
+for (let y=0; y<arrayi10vk1.length; y++)
  {
-   e += `<li index='${y}' arrayvalue='${arrayib5cm3[y].value}'><p style="display: inline-block">${arrayib5cm3[y].liValue}</p><button class="btn pointer bi bi-trash delete-btn" style="display: inline-block;float: right;background-color: red;color: white;" index='${y}'>&nbsp;Delete</button></li>`;
+   e += `<li index='${y}' arrayvalue='${arrayi10vk1[y].value}'><p style="display: inline-block">${arrayi10vk1[y].liValue}</p><button class="btn pointer bi bi-trash delete-btn" style="display: inline-block;float: right;background-color: red;color: white;" index='${y}'>&nbsp;Delete</button></li>`;
  }
-document.getElementById("ixe5wc").innerHTML = e;
+document.getElementById("i01q7x").innerHTML = e;
 }
 
-document.getElementById("ixe5wc").addEventListener("click", event => {
+document.getElementById("i01q7x").addEventListener("click", event => {
   event.preventDefault();
-  arrayib5cm3 = arrayib5cm3.filter(
+  arrayi10vk1 = arrayi10vk1.filter(
     (item, index) => +event.target.getAttribute("index") !== index
   );
-  refreshULixe5wc();
+  refreshULi01q7x();
 });
-function initializearrayib5cm3(data) {
-  arrayib5cm3 = data.map(item => ({
+function initializearrayi10vk1(data) {
+  arrayi10vk1 = data.map(item => ({
     value: item._id,
     liValue: item['wName']
   }));
 }
 document.addEventListener('alignpWorkpackage', function(e) {
-  const advanceSelect = document.getElementById('im1p3y');
+  const advanceSelect = document.getElementById('i3795a');
   const selectedElement = advanceSelect.getAttribute('selected-element');
   if (!selectedElement) return;
   [...advanceSelect.querySelectorAll("[annotationname]")].forEach(
@@ -228,38 +228,4 @@ document.addEventListener('alignpWorkpackage', function(e) {
           response.body.query.pDeliverable
         );
       }
-     } catch (e) { console.log(e) };window.localStorage.setItem('data', JSON.stringify(Array.from(map.entries())));}});apiWorkpackageApi.getAllworkpackage((error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const subDataElements =[...document.getElementById("if2wp").querySelectorAll( "[dataitem='true']" )].filter(
-    (element, index, array) =>
-    !array.reduce((hasAncestorFlag, dataItem) => hasAncestorFlag || (element.compareDocumentPosition(dataItem) & Node.DOCUMENT_POSITION_CONTAINS) === 8, false)
-  );const map = new Map();
-    if( data.length > subDataElements.length){
-      for(let i = 0; i <=  data.length - subDataElements.length; i++){
-        let parentNode = subDataElements[0].parentNode;
-        let child = parentNode.childNodes[0].cloneNode(true);
-        parentNode.appendChild(child);
-        subDataElements.push(child);
-      }
-    }
-    data.forEach((item,i) => {
-    if(subDataElements.length > i)
-      {
-        try { 
-      const insideSubDataElement = subDataElements[i].querySelector("[annotationname = 'wName']");
-      if(insideSubDataElement !== null){
-        insideSubDataElement.textContent = data[data.length -i -1].wName;
-        insideSubDataElement.value=data[data.length -i -1]._id;
-      }
-      else if(subDataElements[i].getAttribute('annotationname') === 'wName'){
-        subDataElements[i].textContent = data[data.length -i -1].wName;
-        subDataElements[i].value=data[data.length -i -1]._id;
-      }
-     } catch (e) { console.log(e) };
-        map.set(subDataElements[i].getAttribute('id'), data[data.length-i-1])
-        
-      }
-      document.dispatchEvent(new Event("alignpWorkpackage"))
-    });
-
-    window.localStorage.setItem('data', JSON.stringify(Array.from(map.entries())));
-    
-    [...subDataElements].forEach((element,index) => {if(index >= data.length) subDataElements[index].style.display = 'none';})}});};
+     } catch (e) { console.log(e) };window.localStorage.setItem('data', JSON.stringify(Array.from(map.entries())));}});};
