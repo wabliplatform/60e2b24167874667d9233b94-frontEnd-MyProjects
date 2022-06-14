@@ -1,4 +1,4 @@
-let apiWorkpackageApi = new TempApi.WorkpackageApi();import TempApi from '../src/index';document.getElementById('i3hm').onclick = (event) => {
+document.getElementById('i3hm').onclick = (event) => {
     event.preventDefault();
     {  location.href= '/homePage' ;}};document.getElementById('iuegv').onclick = (event) => {
     event.preventDefault();
@@ -16,117 +16,7 @@ let apiWorkpackageApi = new TempApi.WorkpackageApi();import TempApi from '../src
     event.preventDefault();
     {  location.href= '/viewEmployees' ;}};document.getElementById('ihkt4g').onclick = (event) => {
     event.preventDefault();
-    {  location.href= '/viewDeliverables' ;}};const onClickPaginationButton = (chunk, pagination) => {
-    for (let i = 0; i < pagination.children.length; i++) {
-      if (
-        pagination.children[i].classList.value.includes("active") === true
-      ) {
-        pagination.children[i].classList.remove("active");
-      }
-    }
-
-    let numberOfFrontButtons =  findTypeOfPagination(pagination);
-    pagination.children[chunk+numberOfFrontButtons-1].classList.add("active");
-
-  apiWorkpackageApi.getAllworkpackage((error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const subDataElements =[...document.getElementById("i1r9f").querySelectorAll( "[dataitem='true']" )].filter(
-    (element, index, array) =>
-    !array.reduce((hasAncestorFlag, dataItem) => hasAncestorFlag || (element.compareDocumentPosition(dataItem) & Node.DOCUMENT_POSITION_CONTAINS) === 8, false)
-  );const map = new Map();[...subDataElements].forEach((element, index) => {
-        if (index >= data.length - (chunk-1)*subDataElements.length) {
-            subDataElements[index].style.display = 'none';
-        }
-        else {
-            subDataElements[index].style.display = "";
-        }
-      });data.forEach((item, i) => {
-
-        let revertIndex = data.length - i -1;
-
-        if(data.length - chunk*subDataElements.length <= revertIndex && revertIndex < data.length - (chunk-1)*subDataElements.length){
-            try { 
-      const insideSubDataElement = subDataElements[i-(chunk-1) *subDataElements.length].querySelector("[annotationname = 'wName']");
-      if(insideSubDataElement !== null){
-        insideSubDataElement.textContent = data[data.length -i -1].wName;
-        
-      }
-      else if(subDataElements[i-(chunk-1) *subDataElements.length].getAttribute('annotationname') === 'wName'){
-        subDataElements[i-(chunk-1) *subDataElements.length].textContent = data[data.length -i -1].wName;
-        
-      }
-     } catch (e) { console.log(e) };try { 
-      const insideSubDataElement = subDataElements[i-(chunk-1) *subDataElements.length].querySelector("[annotationname = 'wPMs']");
-      if(insideSubDataElement !== null){
-        insideSubDataElement.textContent = data[data.length -i -1].wPMs;
-        
-      }
-      else if(subDataElements[i-(chunk-1) *subDataElements.length].getAttribute('annotationname') === 'wPMs'){
-        subDataElements[i-(chunk-1) *subDataElements.length].textContent = data[data.length -i -1].wPMs;
-        
-      }
-     } catch (e) { console.log(e) };try { 
-      const insideSubDataElement = subDataElements[i-(chunk-1) *subDataElements.length].querySelector("[annotationname = 'wLeader']");
-      if(insideSubDataElement !== null){
-        insideSubDataElement.textContent = data[data.length -i -1].wLeader;
-        
-      }
-      else if(subDataElements[i-(chunk-1) *subDataElements.length].getAttribute('annotationname') === 'wLeader'){
-        subDataElements[i-(chunk-1) *subDataElements.length].textContent = data[data.length -i -1].wLeader;
-        
-      }
-     } catch (e) { console.log(e) };
-            map.set(subDataElements[i-(chunk-1) * subDataElements.length].getAttribute('id'), data[data.length-i-1])
-        }
-        window.localStorage.setItem('data', JSON.stringify(Array.from(map.entries())));
-    })
-    }});}
-
-    const findTypeOfPagination = (pagination) => {
-
-      let firstChild = pagination.children[0];
-      let secondChild = pagination.children[1];
-
-      if (
-        (firstChild.attributes.getNamedItem("pagination-first") !== null ||
-          firstChild.attributes.getNamedItem("pagination-previous") !== null) &&
-        (secondChild.attributes.getNamedItem("pagination-first") !== null ||
-          secondChild.attributes.getNamedItem("pagination-previous") !== null)
-      ) {
-        return 2;
-      } else if  (
-        (firstChild.attributes.getNamedItem("pagination-first") !== null ||
-          firstChild.attributes.getNamedItem("pagination-previous") !== null) ||
-        (secondChild.attributes.getNamedItem("pagination-first") !== null ||
-          secondChild.attributes.getNamedItem("pagination-previous") !== null)
-      ) {
-        return 1;
-      }
-      else{
-        return 0;
-      }
-
-    }
-  
-
-    const returnChunkIndex = (chunk, numberOfPages, cause) => {
-
-      if(cause === '+'){
-        if(chunk < numberOfPages){
-          return chunk + 1;
-        }
-        else{
-          return chunk;
-        }
-      }
-      else if(cause === '-'){
-        if(chunk > 2){
-          return chunk - 1;
-        }
-        else{
-          return 1;
-        }
-      }
-    }
-  document.getElementById('i0er7b').onclick = (event) => {
+    {  location.href= '/viewDeliverables' ;}};document.getElementById('i0er7b').onclick = (event) => {
     event.preventDefault();
     { 
       let transitionId = window.location.href.split('/').at(-1);
@@ -135,6 +25,7 @@ let apiWorkpackageApi = new TempApi.WorkpackageApi();import TempApi from '../src
       const newMap = new Map(JSON.parse(storedData));
       newMap.forEach((value, key) => {
         if (
+          document.getElementById(key) !== null &&
           document
             .getElementById(key)
             .contains(document.getElementById("i0er7b")) === true &&
@@ -144,26 +35,7 @@ let apiWorkpackageApi = new TempApi.WorkpackageApi();import TempApi from '../src
           parentId = key;
         }
       });
-     location.href= '/updateWorkpackage/' + transitionId;}};document.getElementById('iqlujs').onclick = (event) => {
-    event.preventDefault();
-    let workpackageId = window.location.pathname.replace('/viewWorkpackages/','');
-      if(workpackageId === '/viewWorkpackages' || workpackageId === ''){
-        let parentId = "";
-        const storedData = window.localStorage.getItem('data');
-        const newMap = new Map(JSON.parse(storedData));
-        newMap.forEach((value, key) => {
-          if (
-            document
-              .getElementById(key)
-              .contains(document.getElementById("iqlujs")) === true &&
-              document.getElementById(key).contains(document.getElementById(parentId)) === false
-          ) {
-            workpackageId = value._id;
-            parentId = key;
-          }
-        });
-      }
-    apiWorkpackageApi.deleteworkpackage( workpackageId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');{  location.href= '/viewWorkpackages' ;}}});};document.getElementById('igj1rh').onclick = (event) => {
+     location.href= '/updateWorkpackage/' + transitionId;}};document.getElementById('igj1rh').onclick = (event) => {
     event.preventDefault();
     { 
       let transitionId = window.location.href.split('/').at(-1);
@@ -172,6 +44,7 @@ let apiWorkpackageApi = new TempApi.WorkpackageApi();import TempApi from '../src
       const newMap = new Map(JSON.parse(storedData));
       newMap.forEach((value, key) => {
         if (
+          document.getElementById(key) !== null &&
           document
             .getElementById(key)
             .contains(document.getElementById("igj1rh")) === true &&
@@ -181,26 +54,7 @@ let apiWorkpackageApi = new TempApi.WorkpackageApi();import TempApi from '../src
           parentId = key;
         }
       });
-     location.href= '/updateWorkpackage/' + transitionId;}};document.getElementById('ibnwin').onclick = (event) => {
-    event.preventDefault();
-    let workpackageId = window.location.pathname.replace('/viewWorkpackages/','');
-      if(workpackageId === '/viewWorkpackages' || workpackageId === ''){
-        let parentId = "";
-        const storedData = window.localStorage.getItem('data');
-        const newMap = new Map(JSON.parse(storedData));
-        newMap.forEach((value, key) => {
-          if (
-            document
-              .getElementById(key)
-              .contains(document.getElementById("ibnwin")) === true &&
-              document.getElementById(key).contains(document.getElementById(parentId)) === false
-          ) {
-            workpackageId = value._id;
-            parentId = key;
-          }
-        });
-      }
-    apiWorkpackageApi.deleteworkpackage( workpackageId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');{  location.href= '/viewWorkpackages' ;}}});};document.getElementById('i6q1e6').onclick = (event) => {
+     location.href= '/updateWorkpackage/' + transitionId;}};document.getElementById('i6q1e6').onclick = (event) => {
     event.preventDefault();
     { 
       let transitionId = window.location.href.split('/').at(-1);
@@ -209,6 +63,7 @@ let apiWorkpackageApi = new TempApi.WorkpackageApi();import TempApi from '../src
       const newMap = new Map(JSON.parse(storedData));
       newMap.forEach((value, key) => {
         if (
+          document.getElementById(key) !== null &&
           document
             .getElementById(key)
             .contains(document.getElementById("i6q1e6")) === true &&
@@ -218,26 +73,7 @@ let apiWorkpackageApi = new TempApi.WorkpackageApi();import TempApi from '../src
           parentId = key;
         }
       });
-     location.href= '/updateWorkpackage/' + transitionId;}};document.getElementById('i6mb6g').onclick = (event) => {
-    event.preventDefault();
-    let workpackageId = window.location.pathname.replace('/viewWorkpackages/','');
-      if(workpackageId === '/viewWorkpackages' || workpackageId === ''){
-        let parentId = "";
-        const storedData = window.localStorage.getItem('data');
-        const newMap = new Map(JSON.parse(storedData));
-        newMap.forEach((value, key) => {
-          if (
-            document
-              .getElementById(key)
-              .contains(document.getElementById("i6mb6g")) === true &&
-              document.getElementById(key).contains(document.getElementById(parentId)) === false
-          ) {
-            workpackageId = value._id;
-            parentId = key;
-          }
-        });
-      }
-    apiWorkpackageApi.deleteworkpackage( workpackageId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');{  location.href= '/viewWorkpackages' ;}}});};document.getElementById('iqgopb').onclick = (event) => {
+     location.href= '/updateWorkpackage/' + transitionId;}};document.getElementById('iqgopb').onclick = (event) => {
     event.preventDefault();
     { 
       let transitionId = window.location.href.split('/').at(-1);
@@ -246,6 +82,7 @@ let apiWorkpackageApi = new TempApi.WorkpackageApi();import TempApi from '../src
       const newMap = new Map(JSON.parse(storedData));
       newMap.forEach((value, key) => {
         if (
+          document.getElementById(key) !== null &&
           document
             .getElementById(key)
             .contains(document.getElementById("iqgopb")) === true &&
@@ -255,26 +92,7 @@ let apiWorkpackageApi = new TempApi.WorkpackageApi();import TempApi from '../src
           parentId = key;
         }
       });
-     location.href= '/updateWorkpackage/' + transitionId;}};document.getElementById('ij69sy').onclick = (event) => {
-    event.preventDefault();
-    let workpackageId = window.location.pathname.replace('/viewWorkpackages/','');
-      if(workpackageId === '/viewWorkpackages' || workpackageId === ''){
-        let parentId = "";
-        const storedData = window.localStorage.getItem('data');
-        const newMap = new Map(JSON.parse(storedData));
-        newMap.forEach((value, key) => {
-          if (
-            document
-              .getElementById(key)
-              .contains(document.getElementById("ij69sy")) === true &&
-              document.getElementById(key).contains(document.getElementById(parentId)) === false
-          ) {
-            workpackageId = value._id;
-            parentId = key;
-          }
-        });
-      }
-    apiWorkpackageApi.deleteworkpackage( workpackageId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');{  location.href= '/viewWorkpackages' ;}}});};document.getElementById('i2ni3').onclick = (event) => {
+     location.href= '/updateWorkpackage/' + transitionId;}};document.getElementById('i2ni3').onclick = (event) => {
     event.preventDefault();
     { 
       let transitionId = window.location.href.split('/').at(-1);
@@ -283,6 +101,7 @@ let apiWorkpackageApi = new TempApi.WorkpackageApi();import TempApi from '../src
       const newMap = new Map(JSON.parse(storedData));
       newMap.forEach((value, key) => {
         if (
+          document.getElementById(key) !== null &&
           document
             .getElementById(key)
             .contains(document.getElementById("i2ni3")) === true &&
@@ -292,26 +111,7 @@ let apiWorkpackageApi = new TempApi.WorkpackageApi();import TempApi from '../src
           parentId = key;
         }
       });
-     location.href= '/updateWorkpackage/' + transitionId;}};document.getElementById('iyge54').onclick = (event) => {
-    event.preventDefault();
-    let workpackageId = window.location.pathname.replace('/viewWorkpackages/','');
-      if(workpackageId === '/viewWorkpackages' || workpackageId === ''){
-        let parentId = "";
-        const storedData = window.localStorage.getItem('data');
-        const newMap = new Map(JSON.parse(storedData));
-        newMap.forEach((value, key) => {
-          if (
-            document
-              .getElementById(key)
-              .contains(document.getElementById("iyge54")) === true &&
-              document.getElementById(key).contains(document.getElementById(parentId)) === false
-          ) {
-            workpackageId = value._id;
-            parentId = key;
-          }
-        });
-      }
-    apiWorkpackageApi.deleteworkpackage( workpackageId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');{  location.href= '/viewWorkpackages' ;}}});};document.getElementById('iz3jfn').onclick = (event) => {
+     location.href= '/updateWorkpackage/' + transitionId;}};document.getElementById('iz3jfn').onclick = (event) => {
     event.preventDefault();
     { 
       let transitionId = window.location.href.split('/').at(-1);
@@ -320,6 +120,7 @@ let apiWorkpackageApi = new TempApi.WorkpackageApi();import TempApi from '../src
       const newMap = new Map(JSON.parse(storedData));
       newMap.forEach((value, key) => {
         if (
+          document.getElementById(key) !== null &&
           document
             .getElementById(key)
             .contains(document.getElementById("iz3jfn")) === true &&
@@ -329,26 +130,7 @@ let apiWorkpackageApi = new TempApi.WorkpackageApi();import TempApi from '../src
           parentId = key;
         }
       });
-     location.href= '/updateWorkpackage/' + transitionId;}};document.getElementById('iwiviz').onclick = (event) => {
-    event.preventDefault();
-    let workpackageId = window.location.pathname.replace('/viewWorkpackages/','');
-      if(workpackageId === '/viewWorkpackages' || workpackageId === ''){
-        let parentId = "";
-        const storedData = window.localStorage.getItem('data');
-        const newMap = new Map(JSON.parse(storedData));
-        newMap.forEach((value, key) => {
-          if (
-            document
-              .getElementById(key)
-              .contains(document.getElementById("iwiviz")) === true &&
-              document.getElementById(key).contains(document.getElementById(parentId)) === false
-          ) {
-            workpackageId = value._id;
-            parentId = key;
-          }
-        });
-      }
-    apiWorkpackageApi.deleteworkpackage( workpackageId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');{  location.href= '/viewWorkpackages' ;}}});};document.getElementById('i7wzjh').onclick = (event) => {
+     location.href= '/updateWorkpackage/' + transitionId;}};document.getElementById('i7wzjh').onclick = (event) => {
     event.preventDefault();
     { 
       let transitionId = window.location.href.split('/').at(-1);
@@ -357,6 +139,7 @@ let apiWorkpackageApi = new TempApi.WorkpackageApi();import TempApi from '../src
       const newMap = new Map(JSON.parse(storedData));
       newMap.forEach((value, key) => {
         if (
+          document.getElementById(key) !== null &&
           document
             .getElementById(key)
             .contains(document.getElementById("i7wzjh")) === true &&
@@ -366,26 +149,7 @@ let apiWorkpackageApi = new TempApi.WorkpackageApi();import TempApi from '../src
           parentId = key;
         }
       });
-     location.href= '/updateWorkpackage/' + transitionId;}};document.getElementById('iz8ilb').onclick = (event) => {
-    event.preventDefault();
-    let workpackageId = window.location.pathname.replace('/viewWorkpackages/','');
-      if(workpackageId === '/viewWorkpackages' || workpackageId === ''){
-        let parentId = "";
-        const storedData = window.localStorage.getItem('data');
-        const newMap = new Map(JSON.parse(storedData));
-        newMap.forEach((value, key) => {
-          if (
-            document
-              .getElementById(key)
-              .contains(document.getElementById("iz8ilb")) === true &&
-              document.getElementById(key).contains(document.getElementById(parentId)) === false
-          ) {
-            workpackageId = value._id;
-            parentId = key;
-          }
-        });
-      }
-    apiWorkpackageApi.deleteworkpackage( workpackageId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');{  location.href= '/viewWorkpackages' ;}}});};document.getElementById('ivbt3u').onclick = (event) => {
+     location.href= '/updateWorkpackage/' + transitionId;}};document.getElementById('ivbt3u').onclick = (event) => {
     event.preventDefault();
     { 
       let transitionId = window.location.href.split('/').at(-1);
@@ -394,6 +158,7 @@ let apiWorkpackageApi = new TempApi.WorkpackageApi();import TempApi from '../src
       const newMap = new Map(JSON.parse(storedData));
       newMap.forEach((value, key) => {
         if (
+          document.getElementById(key) !== null &&
           document
             .getElementById(key)
             .contains(document.getElementById("ivbt3u")) === true &&
@@ -403,26 +168,7 @@ let apiWorkpackageApi = new TempApi.WorkpackageApi();import TempApi from '../src
           parentId = key;
         }
       });
-     location.href= '/updateWorkpackage/' + transitionId;}};document.getElementById('i49l0p').onclick = (event) => {
-    event.preventDefault();
-    let workpackageId = window.location.pathname.replace('/viewWorkpackages/','');
-      if(workpackageId === '/viewWorkpackages' || workpackageId === ''){
-        let parentId = "";
-        const storedData = window.localStorage.getItem('data');
-        const newMap = new Map(JSON.parse(storedData));
-        newMap.forEach((value, key) => {
-          if (
-            document
-              .getElementById(key)
-              .contains(document.getElementById("i49l0p")) === true &&
-              document.getElementById(key).contains(document.getElementById(parentId)) === false
-          ) {
-            workpackageId = value._id;
-            parentId = key;
-          }
-        });
-      }
-    apiWorkpackageApi.deleteworkpackage( workpackageId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');{  location.href= '/viewWorkpackages' ;}}});};document.getElementById('iu6f08').onclick = (event) => {
+     location.href= '/updateWorkpackage/' + transitionId;}};document.getElementById('iu6f08').onclick = (event) => {
     event.preventDefault();
     { 
       let transitionId = window.location.href.split('/').at(-1);
@@ -431,6 +177,7 @@ let apiWorkpackageApi = new TempApi.WorkpackageApi();import TempApi from '../src
       const newMap = new Map(JSON.parse(storedData));
       newMap.forEach((value, key) => {
         if (
+          document.getElementById(key) !== null &&
           document
             .getElementById(key)
             .contains(document.getElementById("iu6f08")) === true &&
@@ -440,26 +187,7 @@ let apiWorkpackageApi = new TempApi.WorkpackageApi();import TempApi from '../src
           parentId = key;
         }
       });
-     location.href= '/updateWorkpackage/' + transitionId;}};document.getElementById('ingrr5').onclick = (event) => {
-    event.preventDefault();
-    let workpackageId = window.location.pathname.replace('/viewWorkpackages/','');
-      if(workpackageId === '/viewWorkpackages' || workpackageId === ''){
-        let parentId = "";
-        const storedData = window.localStorage.getItem('data');
-        const newMap = new Map(JSON.parse(storedData));
-        newMap.forEach((value, key) => {
-          if (
-            document
-              .getElementById(key)
-              .contains(document.getElementById("ingrr5")) === true &&
-              document.getElementById(key).contains(document.getElementById(parentId)) === false
-          ) {
-            workpackageId = value._id;
-            parentId = key;
-          }
-        });
-      }
-    apiWorkpackageApi.deleteworkpackage( workpackageId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');{  location.href= '/viewWorkpackages' ;}}});};document.getElementById('i7tknl').onclick = (event) => {
+     location.href= '/updateWorkpackage/' + transitionId;}};document.getElementById('i7tknl').onclick = (event) => {
     event.preventDefault();
     { 
       let transitionId = window.location.href.split('/').at(-1);
@@ -468,6 +196,7 @@ let apiWorkpackageApi = new TempApi.WorkpackageApi();import TempApi from '../src
       const newMap = new Map(JSON.parse(storedData));
       newMap.forEach((value, key) => {
         if (
+          document.getElementById(key) !== null &&
           document
             .getElementById(key)
             .contains(document.getElementById("i7tknl")) === true &&
@@ -477,155 +206,4 @@ let apiWorkpackageApi = new TempApi.WorkpackageApi();import TempApi from '../src
           parentId = key;
         }
       });
-     location.href= '/updateWorkpackage/' + transitionId;}};document.getElementById('ixu6yi').onclick = (event) => {
-    event.preventDefault();
-    let workpackageId = window.location.pathname.replace('/viewWorkpackages/','');
-      if(workpackageId === '/viewWorkpackages' || workpackageId === ''){
-        let parentId = "";
-        const storedData = window.localStorage.getItem('data');
-        const newMap = new Map(JSON.parse(storedData));
-        newMap.forEach((value, key) => {
-          if (
-            document
-              .getElementById(key)
-              .contains(document.getElementById("ixu6yi")) === true &&
-              document.getElementById(key).contains(document.getElementById(parentId)) === false
-          ) {
-            workpackageId = value._id;
-            parentId = key;
-          }
-        });
-      }
-    apiWorkpackageApi.deleteworkpackage( workpackageId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully.');{  location.href= '/viewWorkpackages' ;}}});};window.onload = () => {apiWorkpackageApi.getAllworkpackage((error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const subDataElements =[...document.getElementById("i1r9f").querySelectorAll( "[dataitem='true']" )].filter(
-    (element, index, array) =>
-    !array.reduce((hasAncestorFlag, dataItem) => hasAncestorFlag || (element.compareDocumentPosition(dataItem) & Node.DOCUMENT_POSITION_CONTAINS) === 8, false)
-  );const map = new Map();let chunk = 1;  data.forEach((item,i) => {
-    if(subDataElements.length > i)
-      {
-        try { 
-      const insideSubDataElement = subDataElements[i-(chunk-1) *subDataElements.length].querySelector("[annotationname = 'wName']");
-      if(insideSubDataElement !== null){
-        insideSubDataElement.textContent = data[data.length -i -1].wName;
-        
-      }
-      else if(subDataElements[i-(chunk-1) *subDataElements.length].getAttribute('annotationname') === 'wName'){
-        subDataElements[i-(chunk-1) *subDataElements.length].textContent = data[data.length -i -1].wName;
-        
-      }
-     } catch (e) { console.log(e) };try { 
-      const insideSubDataElement = subDataElements[i-(chunk-1) *subDataElements.length].querySelector("[annotationname = 'wPMs']");
-      if(insideSubDataElement !== null){
-        insideSubDataElement.textContent = data[data.length -i -1].wPMs;
-        
-      }
-      else if(subDataElements[i-(chunk-1) *subDataElements.length].getAttribute('annotationname') === 'wPMs'){
-        subDataElements[i-(chunk-1) *subDataElements.length].textContent = data[data.length -i -1].wPMs;
-        
-      }
-     } catch (e) { console.log(e) };try { 
-      const insideSubDataElement = subDataElements[i-(chunk-1) *subDataElements.length].querySelector("[annotationname = 'wLeader']");
-      if(insideSubDataElement !== null){
-        insideSubDataElement.textContent = data[data.length -i -1].wLeader;
-        
-      }
-      else if(subDataElements[i-(chunk-1) *subDataElements.length].getAttribute('annotationname') === 'wLeader'){
-        subDataElements[i-(chunk-1) *subDataElements.length].textContent = data[data.length -i -1].wLeader;
-        
-      }
-     } catch (e) { console.log(e) };
-        map.set(subDataElements[i].getAttribute('id'), data[data.length-i-1])
-        
-      }
-      
-    });
-
-    window.localStorage.setItem('data', JSON.stringify(Array.from(map.entries())));
-    
-  let numberOfPages = Math.ceil(data.length/subDataElements.length);
-  let pagination = document.querySelector('[pagination-list="true"]');
-
-    let paginationAttributes = [
-      "pagination-first",
-      "pagination-last",
-      "pagination-previous",
-      "pagination-next",
-    ];
-
-    for (let i = 0; i < pagination.children.length; ) {
-      let foundAttr = false;
-
-      paginationAttributes.forEach((attr) => {
-        if (pagination.children[i].attributes.getNamedItem(attr) !== null) {
-          foundAttr = true;
-        }
-      });
-      if (foundAttr === false) {
-        pagination.removeChild(pagination.children[i]);
-      } else {
-        i++;
-      }
-    }
-
-    for (let i = 0; i < numberOfPages; i++) {
-      let child = document.createElement("li");
-      child.classList.add("page-item");
-      if (i === numberOfPages - 1) {
-        child.classList.add("active");
-      }
-      let insideChild = document.createElement("a");
-      insideChild.classList.add("page-link");
-      let textnode = document.createTextNode(numberOfPages - i);
-      insideChild.appendChild(textnode);
-      insideChild.setAttribute("href", "#!");
-      child.appendChild(insideChild);
-      child.onclick = function () {
-        if (chunk !== numberOfPages - i) {
-          chunk = numberOfPages - i;
-          onClickPaginationButton(chunk, pagination);
-        }
-      };
-
-      let numberOfFrontButtons =  findTypeOfPagination(pagination);
-      pagination.insertBefore(child, pagination.children[numberOfFrontButtons]);
-
-    }
-
-    for (let i = 0; i < pagination.children.length; i++) {
-      let child = pagination.children[i];
-      if ( child.getAttribute("pagination-first") === "true" && numberOfPages > 0 ) {
-        child.onclick = function () {
-          if(chunk !== 1){
-            chunk = 1;
-            onClickPaginationButton(1, pagination);
-          }
-        };
-      }
-
-      if ( child.getAttribute( "pagination-last" ) === "true" && numberOfPages > 0 ) {
-        child.onclick = function () {
-          if(chunk !== numberOfPages){
-            chunk = numberOfPages;
-            onClickPaginationButton( numberOfPages, pagination);
-          }
-        };
-      }
-
-      if ( child.getAttribute("pagination-previous") === "true" && numberOfPages > 0 ) {
-        child.onclick = function () {
-          if(chunk !== returnChunkIndex(chunk,numberOfPages,'-')){
-            chunk = returnChunkIndex(chunk,numberOfPages,'-');
-            onClickPaginationButton(chunk, pagination);
-          }
-        };
-      }
-
-      if ( child.getAttribute("pagination-next") === "true" && numberOfPages > 0) {
-        child.onclick = function () {
-          if(chunk !== returnChunkIndex(chunk,numberOfPages,'+')){
-            chunk = returnChunkIndex(chunk,numberOfPages,'+');
-            onClickPaginationButton(chunk, pagination);
-          }
-        };
-      }
-    };
-    [...subDataElements].forEach((element,index) => {if(index >= data.length) subDataElements[index].style.display = 'none';})}});};
+     location.href= '/updateWorkpackage/' + transitionId;}};window.onload = () => {};
