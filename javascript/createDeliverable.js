@@ -1,4 +1,4 @@
-document.getElementById('iskq').onclick = (event) => {
+let apiDeliverableApi = new TempApi.DeliverableApi();import TempApi from '../src/index';let deliverable = new TempApi.Deliverable();document.getElementById('iskq').onclick = (event) => {
     event.preventDefault();
     {  location.href= '/homePage' ;}};document.getElementById('i62kh').onclick = (event) => {
     event.preventDefault();
@@ -16,4 +16,6 @@ document.getElementById('iskq').onclick = (event) => {
     event.preventDefault();
     {  location.href= '/viewDeliverables' ;}};$(
       function () { $("#datepicker-2").datepicker({format: 'dd-mm-yyyy'}); }
-    );window.onload = () => {};
+    );document.getElementById('iwh0h').onclick = (event) => {
+    event.preventDefault();
+    deliverable['dName'] = document.querySelector("[annotationname = 'dName']").value;deliverable['dStatus'] = document.querySelector("[annotationname = 'dStatus']").value;deliverable['dDate'] = document.querySelector("[annotationname = 'dDate']").value;deliverable['dLeader'] = document.querySelector("[annotationname = 'dLeader']").value;apiDeliverableApi.createdeliverable( deliverable, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); {  location.href= '/viewDeliverables' ;}}});};window.onload = () => {};
