@@ -1,4 +1,4 @@
-let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';let project = new TempApi.Project();document.getElementById('icaj').onclick = (event) => {
+document.getElementById('icaj').onclick = (event) => {
     event.preventDefault();
     {  location.href= '/homePage' ;}};document.getElementById('ix1q7').onclick = (event) => {
     event.preventDefault();
@@ -187,10 +187,4 @@ document.addEventListener('alignpDeliverable', function(e) {
         optionElement.setAttribute("selected", true);
     }
   );
-});document.getElementById('i7w1n').onclick = (event) => {
-    event.preventDefault();
-    project['pImage'] = {
-        data: document.querySelector("[annotationname = 'pImage']").getAttribute("data-image-base64") !== null ? document.querySelector("[annotationname = 'pImage']").getAttribute("data-image-base64") : document.querySelector("[annotationname = 'pImage']").src,
-        name: document.querySelector("[annotationname = 'pImage']").getAttribute("name")
-      };
-      project['pTitle'] = document.querySelector("[annotationname = 'pTitle']").value;project['pStart'] = document.querySelector("[annotationname = 'pStart']").value;project['pWebsite'] = document.querySelector("[annotationname = 'pWebsite']").value;project['pEnd'] = document.querySelector("[annotationname = 'pEnd']").value;project['pDuration'] = document.querySelector("[annotationname = 'pDuration']").value;project['pGA'] = document.querySelector("[annotationname = 'pGA']").value;project['pAbstract'] = document.querySelector("[annotationname = 'pAbstract']").value;project["pWorkpackage"] = [...document.querySelector("[annotationname = 'pWorkpackage']").querySelectorAll("[arrayvalue]")].map(li=> li.getAttribute('arrayvalue'));project["pDeliverable"] = [...document.querySelector("[annotationname = 'pDeliverable']").querySelectorAll("[arrayvalue]")].map(li=> li.getAttribute('arrayvalue'));apiProjectApi.createproject( project, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); {  location.href= '/homePage' ;}}});};window.onload = () => {};
+});window.onload = () => {};
