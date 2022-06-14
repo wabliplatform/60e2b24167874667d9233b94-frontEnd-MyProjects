@@ -126,23 +126,7 @@ document.addEventListener('alignpWorkpackage', function(e) {
         optionElement.setAttribute("selected", true);
     }
   );
-});document.getElementById('i7w1n').onclick = (event) => {
-    event.preventDefault();
-    let projectId = window.location.pathname.replace('/updateProject/','');let project = new TempApi.Project();project['pImage'] = {
-        data: document.querySelector("[annotationname = 'pImage']").getAttribute("data-image-base64") !== null ? document.querySelector("[annotationname = 'pImage']").getAttribute("data-image-base64") : document.querySelector("[annotationname = 'pImage']").src,
-        name: document.querySelector("[annotationname = 'pImage']").getAttribute("name")
-      };project['pTitle'] = document.querySelector("[annotationname = 'pTitle']").value;project['pStart'] = document.querySelector("[annotationname = 'pStart']").value;project['pWebsite'] = document.querySelector("[annotationname = 'pWebsite']").value;project['pEnd'] = document.querySelector("[annotationname = 'pEnd']").value;project['pDuration'] = document.querySelector("[annotationname = 'pDuration']").value;project['pGA'] = document.querySelector("[annotationname = 'pGA']").value;project['pAbstract'] = document.querySelector("[annotationname = 'pAbstract']").value;project['pWorkpackage'] = arrayib5cm3.map(item => item.value); let opts = {project};apiProjectApi.updateproject( projectId, opts, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); 
-      if(response.body.query.pImage !== undefined){
-
-        if(document.querySelector('[annotationname = pImage]').getAttribute('type') === 'file'){
-          document.querySelector('[annotationname = pImage]').setAttribute('data-image-base64',response.body.query.pImage.data);
-        }
-        else{
-          document.querySelector('[annotationname = pImage]').src = response.body.query.pImage.data;
-        }
-        document.querySelector('[annotationname = pImage]').name = response.body.query.pImage.name;
-      }
-      document.querySelector('[annotationname = pTitle]').value = response.body.query.pTitle ;document.querySelector('[annotationname = pStart]').value = response.body.query.pStart ;document.querySelector('[annotationname = pWebsite]').value = response.body.query.pWebsite ;document.querySelector('[annotationname = pEnd]').value = response.body.query.pEnd ;document.querySelector('[annotationname = pDuration]').value = response.body.query.pDuration ;document.querySelector('[annotationname = pGA]').value = response.body.query.pGA ;document.querySelector('[annotationname = pAbstract]').value = response.body.query.pAbstract ;initializearrayib5cm3(response.body.query.pWorkpackage|| []) ; }});};window.onload = () => {let projectId = window.location.pathname.replace('/updateProject/','');apiProjectApi.getproject( projectId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const map = new Map();try { document.querySelector('[annotationname = pTitle]').value = response.body.query.pTitle; } catch (e) { console.log(e) };try { 
+});window.onload = () => {let projectId = window.location.pathname.replace('/updateProject/','');apiProjectApi.getproject( projectId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const map = new Map();try { document.querySelector('[annotationname = pTitle]').value = response.body.query.pTitle; } catch (e) { console.log(e) };try { 
       if(response.body.query.pImage !== undefined){
         if(document.querySelector('[annotationname = pImage]').getAttribute('type') === 'file'){
           document.querySelector('[annotationname = pImage]').setAttribute('data-image-base64',response.body.query.pImage.data);
@@ -163,8 +147,7 @@ document.addEventListener('alignpWorkpackage', function(e) {
         const insideSubdocument = document.querySelector("[annotationname = 'pWorkpackage']");
         if (insideSubdocument !==null) {
           const tableData = response.body.query.pWorkpackage;
-    initializearrayib5cm3(tableData); 
- refreshULixe5wc();
+    
     const tableDataElement = insideSubdocument.querySelectorAll("[dataitem='true']");
     tableData.forEach((data,index) => {
       if(tableDataElement.length < index) {
