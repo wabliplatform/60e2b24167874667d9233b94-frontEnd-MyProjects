@@ -28,17 +28,17 @@ class Project {
      * @param pImage {module:model/ProjectPImage} 
      * @param pTitle {String} 
      * @param pStart {String} 
-     * @param pWebsite {String} 
      * @param pEnd {String} 
-     * @param pDuration {String} 
      * @param pGA {String} 
-     * @param pAbstract {String} 
      * @param pWorkpackage {Array.<module:model/Workpackage>} 
+     * @param pAbstract {String} 
      * @param pDeliverable {Array.<module:model/Deliverable>} 
+     * @param pWebsite {String} 
+     * @param pDuration {String} 
      */
-    constructor(pImage, pTitle, pStart, pWebsite, pEnd, pDuration, pGA, pAbstract, pWorkpackage, pDeliverable) { 
+    constructor(pImage, pTitle, pStart, pEnd, pGA, pWorkpackage, pAbstract, pDeliverable, pWebsite, pDuration) { 
         
-        Project.initialize(this, pImage, pTitle, pStart, pWebsite, pEnd, pDuration, pGA, pAbstract, pWorkpackage, pDeliverable);
+        Project.initialize(this, pImage, pTitle, pStart, pEnd, pGA, pWorkpackage, pAbstract, pDeliverable, pWebsite, pDuration);
     }
 
     /**
@@ -46,17 +46,17 @@ class Project {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, pImage, pTitle, pStart, pWebsite, pEnd, pDuration, pGA, pAbstract, pWorkpackage, pDeliverable) { 
+    static initialize(obj, pImage, pTitle, pStart, pEnd, pGA, pWorkpackage, pAbstract, pDeliverable, pWebsite, pDuration) { 
         obj['pImage'] = pImage;
         obj['pTitle'] = pTitle;
         obj['pStart'] = pStart;
-        obj['pWebsite'] = pWebsite;
         obj['pEnd'] = pEnd;
-        obj['pDuration'] = pDuration;
         obj['pGA'] = pGA;
-        obj['pAbstract'] = pAbstract;
         obj['pWorkpackage'] = pWorkpackage;
+        obj['pAbstract'] = pAbstract;
         obj['pDeliverable'] = pDeliverable;
+        obj['pWebsite'] = pWebsite;
+        obj['pDuration'] = pDuration;
     }
 
     /**
@@ -82,26 +82,26 @@ class Project {
             if (data.hasOwnProperty('pStart')) {
                 obj['pStart'] = ApiClient.convertToType(data['pStart'], 'String');
             }
-            if (data.hasOwnProperty('pWebsite')) {
-                obj['pWebsite'] = ApiClient.convertToType(data['pWebsite'], 'String');
-            }
             if (data.hasOwnProperty('pEnd')) {
                 obj['pEnd'] = ApiClient.convertToType(data['pEnd'], 'String');
-            }
-            if (data.hasOwnProperty('pDuration')) {
-                obj['pDuration'] = ApiClient.convertToType(data['pDuration'], 'String');
             }
             if (data.hasOwnProperty('pGA')) {
                 obj['pGA'] = ApiClient.convertToType(data['pGA'], 'String');
             }
-            if (data.hasOwnProperty('pAbstract')) {
-                obj['pAbstract'] = ApiClient.convertToType(data['pAbstract'], 'String');
-            }
             if (data.hasOwnProperty('pWorkpackage')) {
                 obj['pWorkpackage'] = ApiClient.convertToType(data['pWorkpackage'], [Workpackage]);
             }
+            if (data.hasOwnProperty('pAbstract')) {
+                obj['pAbstract'] = ApiClient.convertToType(data['pAbstract'], 'String');
+            }
             if (data.hasOwnProperty('pDeliverable')) {
                 obj['pDeliverable'] = ApiClient.convertToType(data['pDeliverable'], [Deliverable]);
+            }
+            if (data.hasOwnProperty('pWebsite')) {
+                obj['pWebsite'] = ApiClient.convertToType(data['pWebsite'], 'String');
+            }
+            if (data.hasOwnProperty('pDuration')) {
+                obj['pDuration'] = ApiClient.convertToType(data['pDuration'], 'String');
             }
         }
         return obj;
@@ -131,19 +131,9 @@ Project.prototype['pTitle'] = undefined;
 Project.prototype['pStart'] = undefined;
 
 /**
- * @member {String} pWebsite
- */
-Project.prototype['pWebsite'] = undefined;
-
-/**
  * @member {String} pEnd
  */
 Project.prototype['pEnd'] = undefined;
-
-/**
- * @member {String} pDuration
- */
-Project.prototype['pDuration'] = undefined;
 
 /**
  * @member {String} pGA
@@ -151,19 +141,29 @@ Project.prototype['pDuration'] = undefined;
 Project.prototype['pGA'] = undefined;
 
 /**
- * @member {String} pAbstract
- */
-Project.prototype['pAbstract'] = undefined;
-
-/**
  * @member {Array.<module:model/Workpackage>} pWorkpackage
  */
 Project.prototype['pWorkpackage'] = undefined;
 
 /**
+ * @member {String} pAbstract
+ */
+Project.prototype['pAbstract'] = undefined;
+
+/**
  * @member {Array.<module:model/Deliverable>} pDeliverable
  */
 Project.prototype['pDeliverable'] = undefined;
+
+/**
+ * @member {String} pWebsite
+ */
+Project.prototype['pWebsite'] = undefined;
+
+/**
+ * @member {String} pDuration
+ */
+Project.prototype['pDuration'] = undefined;
 
 
 

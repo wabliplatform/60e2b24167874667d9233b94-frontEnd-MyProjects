@@ -78,20 +78,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property pWebsite (base name: "pWebsite")', function() {
-      // uncomment below and update the code to test the property pWebsite
-      //var instance = new TempApi.Project();
-      //expect(instance).to.be();
-    });
-
     it('should have the property pEnd (base name: "pEnd")', function() {
       // uncomment below and update the code to test the property pEnd
-      //var instance = new TempApi.Project();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property pDuration (base name: "pDuration")', function() {
-      // uncomment below and update the code to test the property pDuration
       //var instance = new TempApi.Project();
       //expect(instance).to.be();
     });
@@ -102,20 +90,32 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property pAbstract (base name: "pAbstract")', function() {
-      // uncomment below and update the code to test the property pAbstract
-      //var instance = new TempApi.Project();
-      //expect(instance).to.be();
-    });
-
     it('should have the property pWorkpackage (base name: "pWorkpackage")', function() {
       // uncomment below and update the code to test the property pWorkpackage
       //var instance = new TempApi.Project();
       //expect(instance).to.be();
     });
 
+    it('should have the property pAbstract (base name: "pAbstract")', function() {
+      // uncomment below and update the code to test the property pAbstract
+      //var instance = new TempApi.Project();
+      //expect(instance).to.be();
+    });
+
     it('should have the property pDeliverable (base name: "pDeliverable")', function() {
       // uncomment below and update the code to test the property pDeliverable
+      //var instance = new TempApi.Project();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property pWebsite (base name: "pWebsite")', function() {
+      // uncomment below and update the code to test the property pWebsite
+      //var instance = new TempApi.Project();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property pDuration (base name: "pDuration")', function() {
+      // uncomment below and update the code to test the property pDuration
       //var instance = new TempApi.Project();
       //expect(instance).to.be();
     });

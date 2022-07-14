@@ -3,6 +3,7 @@ const path = require('path');
 module.exports = {
   entry: {
 	'homePage' : './javascript/homePage.js',
+	'cproject' : './javascript/cproject.js',
 	'createProject' : './javascript/createProject.js',
 	'updateProject' : './javascript/updateProject.js',
 	'viewProject' : './javascript/viewProject.js',

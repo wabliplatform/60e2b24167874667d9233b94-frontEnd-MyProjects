@@ -8,12 +8,12 @@ Name | Type | Description | Notes
 **pImage** | [**ProjectPImage**](ProjectPImage.md) |  | 
 **pTitle** | **String** |  | 
 **pStart** | **String** |  | 
-**pWebsite** | **String** |  | 
 **pEnd** | **String** |  | 
-**pDuration** | **String** |  | 
 **pGA** | **String** |  | 
-**pAbstract** | **String** |  | 
 **pWorkpackage** | [**[Workpackage]**](Workpackage.md) |  | 
+**pAbstract** | **String** |  | 
 **pDeliverable** | [**[Deliverable]**](Deliverable.md) |  | 
+**pWebsite** | **String** |  | 
+**pDuration** | **String** |  | 
 
 
