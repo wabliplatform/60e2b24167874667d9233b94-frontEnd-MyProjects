@@ -1,24 +1,24 @@
-document.getElementById('i8nj').onclick = (event) => {
+let apiProjectApi = new TempApi.ProjectApi();import TempApi from '../src/index';let apiEmployeeApi = new TempApi.EmployeeApi();let employee = new TempApi.Employee();document.getElementById('i8nj').onclick = (event) => {
     event.preventDefault();
-    {  location.href= '/homePage' ;}};document.getElementById('i6sjj').onclick = (event) => {
+    {   location.href= '/homePage' ;}};document.getElementById('i6sjj').onclick = (event) => {
     event.preventDefault();
-    {  location.href= '/createProject' ;}};document.getElementById('i4ual').onclick = (event) => {
+    {   location.href= '/createProject' ;}};document.getElementById('i4ual').onclick = (event) => {
     event.preventDefault();
-    {  location.href= '/createTask' ;}};document.getElementById('iq041').onclick = (event) => {
+    {   location.href= '/createTask' ;}};document.getElementById('iq041').onclick = (event) => {
     event.preventDefault();
-    {  location.href= '/createWorkpackage' ;}};document.getElementById('ikvd4').onclick = (event) => {
+    {   location.href= '/createWorkpackage' ;}};document.getElementById('ikvd4').onclick = (event) => {
     event.preventDefault();
-    {  location.href= '/createEmployee' ;}};document.getElementById('ieulg').onclick = (event) => {
+    {   location.href= '/createEmployee' ;}};document.getElementById('ieulg').onclick = (event) => {
     event.preventDefault();
-    {  location.href= '/createDeliverable' ;}};document.getElementById('i63k3').onclick = (event) => {
+    {   location.href= '/createDeliverable' ;}};document.getElementById('i63k3').onclick = (event) => {
     event.preventDefault();
-    {  location.href= '/viewTasks' ;}};document.getElementById('inokz').onclick = (event) => {
+    {   location.href= '/viewTasks' ;}};document.getElementById('inokz').onclick = (event) => {
     event.preventDefault();
-    {  location.href= '/viewEmployees' ;}};document.getElementById('izpik').onclick = (event) => {
+    {   location.href= '/viewEmployees' ;}};document.getElementById('izpik').onclick = (event) => {
     event.preventDefault();
-    {  location.href= '/viewWorkpackages' ;}};document.getElementById('icz5f').onclick = (event) => {
+    {   location.href= '/viewWorkpackages' ;}};document.getElementById('icz5f').onclick = (event) => {
     event.preventDefault();
-    {  location.href= '/viewDeliverables' ;}};
+    {   location.href= '/viewDeliverables' ;}};
  function calculateSize(img, maxWidth, maxHeight) {
       let width = img.width;
       let height = img.height;
@@ -142,4 +142,44 @@ document.addEventListener('aligneProject', function(e) {
         optionElement.setAttribute("selected", true);
     }
   );
-});window.onload = () => {};
+});document.getElementById('i1wf6').onclick = (event) => {
+    event.preventDefault();
+    employee['eName'] = document.querySelector("[annotationname = 'eName']").value;employee['eSurname'] = document.querySelector("[annotationname = 'eSurname']").value;employee['eImage'] = {
+        data: document.querySelector("[annotationname = 'eImage']").getAttribute("data-image-base64") !== null ? document.querySelector("[annotationname = 'eImage']").getAttribute("data-image-base64") : document.querySelector("[annotationname = 'eImage']").src,
+        name: document.querySelector("[annotationname = 'eImage']").getAttribute("name")
+      };
+      employee["eProject"] = [...document.querySelector("[annotationname = 'eProject']").querySelectorAll("[arrayvalue]")].map(li=> li.getAttribute('arrayvalue'));apiEmployeeApi.createemployee( employee, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); {   location.href= '/homePage' ;}}});};window.onload = () => {apiProjectApi.getAllproject((error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const subDataElements =[...document.getElementById("i3ffa").querySelectorAll( "[dataitem='true']" )].filter(
+    (element, index, array) =>
+    !array.reduce((hasAncestorFlag, dataItem) => hasAncestorFlag || (element.compareDocumentPosition(dataItem) & Node.DOCUMENT_POSITION_CONTAINS) === 8, false)
+  );const map = new Map();
+    if( data.length > subDataElements.length){
+      for(let i = 0; i <=  data.length - subDataElements.length; i++){
+        let parentNode = subDataElements[0].parentNode;
+        let child = parentNode.childNodes[0].cloneNode(true);
+        parentNode.appendChild(child);
+        subDataElements.push(child);
+      }
+    }
+    data.forEach((item,i) => {
+    if(subDataElements.length > i)
+      {
+        try { 
+      const insideSubDataElement = subDataElements[i].querySelector("[annotationname = 'pTitle']");
+      if(insideSubDataElement !== null){
+        insideSubDataElement.textContent = data[data.length -i -1].pTitle;
+        insideSubDataElement.value=data[data.length -i -1]._id;
+      }
+      else if(subDataElements[i].getAttribute('annotationname') === 'pTitle'){
+        subDataElements[i].textContent = data[data.length -i -1].pTitle;
+        subDataElements[i].value=data[data.length -i -1]._id;
+      }
+     } catch (e) { console.log(e) };
+        map.set(subDataElements[i].getAttribute('id'), data[data.length-i-1])
+        
+      }
+      document.dispatchEvent(new Event("aligneProject"))
+    });
+
+    window.localStorage.setItem('data', JSON.stringify(Array.from(map.entries())));
+    
+    [...subDataElements].forEach((element,index) => {if(index >= data.length) subDataElements[index].style.display = 'none';})}});};
